@@ -43,15 +43,21 @@ export default function SignupForm() {
       return;
     }
 
-    const { error: practiceError } = await supabase.from("dd_practices").insert({
-      user_id: userId,
-      practice_name: form.practiceName,
-      dentist_name: form.dentistName,
-      email: form.email,
+    // Use server API route with service role key to bypass RLS
+    const res = await fetch("/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId,
+        practiceName: form.practiceName,
+        dentistName: form.dentistName,
+        email: form.email,
+      }),
     });
 
-    if (practiceError) {
-      setError("Account created but failed to save practice info. Please contact support.");
+    if (!res.ok) {
+      const data = await res.json();
+      setError(data.error || "Failed to save practice info. Please try again.");
       setLoading(false);
       return;
     }
@@ -116,14 +122,12 @@ export default function SignupForm() {
       ))}
 
       {error && (
-        <p
-          style={{
-            fontFamily: "DM Sans, Arial, sans-serif",
-            fontSize: "13px",
-            color: "#9B3B3B",
-            marginBottom: "16px",
-          }}
-        >
+        <p style={{
+          fontFamily: "DM Sans, Arial, sans-serif",
+          fontSize: "13px",
+          color: "#9B3B3B",
+          marginBottom: "16px",
+        }}>
           {error}
         </p>
       )}

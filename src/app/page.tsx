@@ -39,6 +39,7 @@ export default function LandingPage() {
           <a href="/" style={{ textDecoration: "none" }}>
             <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 17, color: "#1A2B3C" }}>Dental</span>
             <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 17, color: "#0E6B5E" }}>Diagnostix</span>
+            <sup style={{ fontSize: 9, color: "#0E6B5E", verticalAlign: "super", lineHeight: 0 }}>&trade;</sup>
           </a>
           <div className="nav-links" style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
             <div className="nav-links-text" style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
