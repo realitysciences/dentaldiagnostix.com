@@ -1,26 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F7F5F0;
+  --navy: #1A2B3C;
+  --teal: #0E6B5E;
+  --teal-light: #E4F2F0;
+  --slate: #4A5568;
+  --amber: #B07D2E;
+  --red-risk: #9B3B3B;
+  --border: #E2DDD5;
+  --foreground: #1A2B3C;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Lora", serif;
+  font-weight: 400;
 }
