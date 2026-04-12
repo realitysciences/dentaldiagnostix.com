@@ -711,7 +711,17 @@ export default function IntakeFlow({
         )}
 
         {/* Next button */}
-        <div style={{ marginTop: "28px", textAlign: "right" }}>
+        <div style={{ marginTop: "28px", display: "flex", alignItems: "center", justifyContent: "flex-end", gap: "16px" }}>
+          {!canSubmit && inputText.trim().length > 0 && (
+            <p style={{
+              fontFamily: "DM Sans, Arial, sans-serif",
+              fontSize: "13px",
+              color: "#4A5568",
+              margin: 0,
+            }}>
+              Say a little more to continue
+            </p>
+          )}
           <button
             onClick={handleNext}
             disabled={!canSubmit}
