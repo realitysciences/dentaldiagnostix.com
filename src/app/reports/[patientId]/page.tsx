@@ -2,6 +2,7 @@ import { redirect, notFound } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import type { Report, Patient } from "@/types/database";
+import GenerateReportButton from "./GenerateReportButton";
 
 export default async function ReportPage({
   params,
@@ -43,21 +44,30 @@ export default async function ReportPage({
     .single();
 
   if (!report) {
+    const isComplete = patient.status === "complete";
     return (
       <main style={{ minHeight: "100vh", background: "#F7F5F0" }}>
         <ReportHeader practiceName={practice.practice_name} />
         <div
-          style={{ maxWidth: 800, margin: "0 auto", padding: "48px 24px", textAlign: "center" }}
+          style={{ maxWidth: 800, margin: "0 auto", padding: "48px 24px" }}
         >
-          <p style={{ fontFamily: "DM Sans, Arial, sans-serif", color: "#4A5568" }}>
-            Report not yet generated. The patient may still be completing their intake.
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: "22px", fontWeight: 400, color: "#1A2B3C", margin: "0 0 8px" }}>
+            {patient.name}
+          </h2>
+          <p style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", color: "#4A5568", margin: "0 0 24px" }}>
+            {isComplete
+              ? "Intake complete. The report needs to be generated."
+              : "The patient has not yet completed their intake."}
           </p>
-          <Link
-            href="/dashboard"
-            style={{ color: "#0E6B5E", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px" }}
-          >
-            Back to dashboard
-          </Link>
+          {isComplete && <GenerateReportButton patientId={patient.id} />}
+          <div style={{ marginTop: "24px" }}>
+            <Link
+              href="/dashboard"
+              style={{ color: "#4A5568", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", textDecoration: "none" }}
+            >
+              Back to dashboard
+            </Link>
+          </div>
         </div>
       </main>
     );
