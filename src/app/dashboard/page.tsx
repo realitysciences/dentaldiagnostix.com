@@ -27,7 +27,7 @@ export default async function DashboardPage() {
           <p style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", color: "#4A5568", marginBottom: "28px" }}>
             Your account exists but your practice profile is incomplete. Complete it to access your dashboard.
           </p>
-          <Link href="/signup" style={{ background: "#0E6B5E", color: "#fff", padding: "12px 28px", borderRadius: "8px", textDecoration: "none", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", fontWeight: 500 }}>
+          <Link href="/setup-practice" style={{ background: "#0E6B5E", color: "#fff", padding: "12px 28px", borderRadius: "8px", textDecoration: "none", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", fontWeight: 500 }}>
             Complete setup
           </Link>
         </div>
