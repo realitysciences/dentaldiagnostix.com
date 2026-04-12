@@ -140,7 +140,7 @@ export default function LandingPage() {
           <div className="lp-two-col" style={{ gap: "1.25rem", marginBottom: "1.25rem" }}>
             <div style={{ background: "#E4F2F0", borderLeft: "2px solid #0E6B5E", borderRadius: "0 6px 6px 0", padding: "12px 14px" }}>
               <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "0.8px", marginBottom: 7, fontWeight: 500 }}>Terrain summary</p>
-              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C" }}>Avoidance is rooted in shame, not fear. She stopped going after a dentist made her feel judged. Not because treatment was painful, but because she felt like a bad patient. Respond with neutrality and non-judgment, not reassurance about pain.</p>
+              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C" }}>She stopped coming in because a dentist made her feel like a bad patient, not because she was afraid of the chair. She already knows her situation is not ideal and she is braced for you to say so. Do not. Walk in without any commentary on the gap or the state of her teeth and this appointment will go well.</p>
             </div>
             <div style={{ background: "#FDF4E3", borderLeft: "2px solid #B07D2E", borderRadius: "0 6px 6px 0", padding: "12px 14px" }}>
               <p style={{ fontSize: 10, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "0.8px", marginBottom: 7, fontWeight: 500 }}>Compliance signal</p>
