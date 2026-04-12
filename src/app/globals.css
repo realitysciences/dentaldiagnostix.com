@@ -18,9 +18,7 @@
   --color-foreground: var(--foreground);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   background: var(--background);
@@ -32,4 +30,29 @@ body {
 h1, h2, h3, h4 {
   font-family: "Lora", serif;
   font-weight: 400;
+}
+
+/* Landing page responsive classes */
+.lp-two-col   { display: grid; grid-template-columns: 1fr 1fr; }
+.lp-three-col { display: grid; grid-template-columns: repeat(3, 1fr); }
+.lp-four-col  { display: grid; grid-template-columns: repeat(4, 1fr); }
+.lp-nav-links { display: flex; gap: 1.5rem; align-items: center; }
+.lp-section   { padding-left: 3rem; padding-right: 3rem; }
+
+@media (max-width: 640px) {
+  .lp-nav-links         { display: none; }
+  .lp-two-col           { grid-template-columns: 1fr; }
+  .lp-three-col         { grid-template-columns: 1fr; }
+  .lp-four-col          { grid-template-columns: 1fr 1fr; }
+  .lp-section           { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .lp-hero-h1           { font-size: 34px !important; }
+  .lp-report-patient    { flex-direction: column; gap: 8px; }
+  .lp-report-body       { padding: 1.25rem !important; }
+  .lp-report-card       { margin-left: 1rem; margin-right: 1rem; }
+  .lp-pricing-grid      { grid-template-columns: 1fr; max-width: 100% !important; }
+  .lp-faq-grid          { grid-template-columns: 1fr; gap: 2rem !important; }
+  .lp-footer            { flex-direction: column; gap: 8px; }
+  .lp-nav-inner         { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .lp-built-col         { gap: 3rem !important; }
+  .lp-intake-gap        { gap: 2rem !important; }
 }

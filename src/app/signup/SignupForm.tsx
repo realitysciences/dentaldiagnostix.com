@@ -23,42 +23,37 @@ export default function SignupForm() {
     setLoading(true);
     setError("");
 
-    const supabase = createClient();
-
-    const { data, error: signUpError } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-    });
-
-    if (signUpError) {
-      setError(signUpError.message);
-      setLoading(false);
-      return;
-    }
-
-    const userId = data.user?.id;
-    if (!userId) {
-      setError("Signup succeeded but no user ID returned. Please try again.");
-      setLoading(false);
-      return;
-    }
-
-    // Use server API route with service role key to bypass RLS
+    // Server creates user + practice atomically
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        userId,
+        email: form.email,
+        password: form.password,
         practiceName: form.practiceName,
         dentistName: form.dentistName,
-        email: form.email,
       }),
     });
 
+    const data = await res.json();
+
     if (!res.ok) {
-      const data = await res.json();
-      setError(data.error || "Failed to save practice info. Please try again.");
+      setError(data.error || "Something went wrong. Please try again.");
       setLoading(false);
+      return;
+    }
+
+    // Now sign in client-side to establish the session
+    const supabase = createClient();
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
+
+    if (signInError) {
+      setError("Account created. Please sign in.");
+      setLoading(false);
+      router.push("/login");
       return;
     }
 
