@@ -17,15 +17,25 @@ export default function GenerateReportButton({ patientId }: { patientId: string 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ patientId }),
       });
-      const data = await res.json();
+
+      let data: { error?: string; success?: boolean } = {};
+      try {
+        data = await res.json();
+      } catch {
+        setError(`Server error (${res.status}). Please try again.`);
+        setLoading(false);
+        return;
+      }
+
       if (!res.ok) {
-        setError(data.error || "Failed to generate report");
+        setError(data.error || `Failed to generate report (${res.status})`);
         setLoading(false);
         return;
       }
       router.refresh();
-    } catch {
-      setError("Something went wrong. Please try again.");
+    } catch (err) {
+      console.error("Generate report fetch error:", err);
+      setError("Network error. Please check your connection and try again.");
       setLoading(false);
     }
   }
