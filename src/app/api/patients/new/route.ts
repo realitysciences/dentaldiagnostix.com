@@ -38,15 +38,13 @@ export async function POST(request: NextRequest) {
     process.env.NEXT_PUBLIC_APP_URL || "https://dentaldiagnostix.com";
   const intakeLink = `${appUrl}/intake/${patient.token}`;
 
-  await resend.emails.send({
+  // Until domain is verified, onboarding@resend.dev can only deliver to the Resend account owner.
+  // Sending to davidbensondds@gmail.com so the link is accessible during testing.
+  const { error: emailError } = await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: email,
-    subject: `Your pre-appointment intake from ${practiceName}`,
-    text: `Hi ${name},
-
-${dentistName} at ${practiceName} has sent you a short pre-appointment conversation to complete before your visit. It takes about 10-15 minutes and there are no right or wrong answers.
-
-Complete it here: ${intakeLink}`,
+    to: "davidbensondds@gmail.com",
+    subject: `[Intake for ${name}] Pre-appointment link`,
+    text: `Patient: ${name} (${email})\n\nForward this link to the patient or use it for testing:\n\n${intakeLink}`,
     html: `<!DOCTYPE html>
 <html>
 <body style="margin:0;padding:40px 24px;background:#F7F5F0;font-family:Arial,sans-serif;">
@@ -54,11 +52,12 @@ Complete it here: ${intakeLink}`,
   <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;padding:40px;border:1px solid #E2DDD5;">
     <tr><td>
       <p style="margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#0E6B5E;">DentalDiagnostix</p>
-      <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:22px;font-weight:400;color:#1A2B3C;">Your pre-appointment intake</h1>
-      <p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:#4A5568;">Hi ${name},</p>
-      <p style="margin:0 0 24px;font-size:15px;line-height:1.7;color:#4A5568;">${dentistName} at ${practiceName} has sent you a short pre-appointment conversation to complete before your visit. It takes about 10-15 minutes and there are no right or wrong answers.</p>
-      <a href="${intakeLink}" style="display:inline-block;padding:13px 28px;background:#0E6B5E;color:#ffffff;text-decoration:none;border-radius:8px;font-size:15px;font-weight:500;">Complete your intake</a>
-      <p style="margin:24px 0 0;font-size:12px;color:#9AA8B6;">Or copy this link: ${intakeLink}</p>
+      <h1 style="margin:0 0 24px;font-family:Georgia,serif;font-size:22px;font-weight:400;color:#1A2B3C;">Intake link for ${name}</h1>
+      <p style="margin:0 0 8px;font-size:13px;color:#4A5568;">Patient: <strong>${name}</strong> (${email})</p>
+      <p style="margin:0 0 24px;font-size:13px;color:#4A5568;">Forward the link below to this patient, or use it directly for testing.</p>
+      <a href="${intakeLink}" style="display:inline-block;padding:13px 28px;background:#0E6B5E;color:#ffffff;text-decoration:none;border-radius:8px;font-size:15px;font-weight:500;">Open intake</a>
+      <p style="margin:24px 0 0;font-size:12px;color:#9AA8B6;">${intakeLink}</p>
+      <p style="margin:16px 0 0;font-size:11px;color:#C0C8D0;">This is a development email. Once dentaldiagnostix.com is verified in Resend, emails will go directly to patients.</p>
     </td></tr>
   </table>
   </td></tr></table>
@@ -66,5 +65,9 @@ Complete it here: ${intakeLink}`,
 </html>`,
   });
 
-  return NextResponse.json({ success: true, patientId: patient.id });
+  if (emailError) {
+    console.error("Resend error (patients/new):", emailError);
+  }
+
+  return NextResponse.json({ success: true, patientId: patient.id, intakeLink });
 }
