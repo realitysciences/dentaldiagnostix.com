@@ -40,7 +40,8 @@ export async function POST(request: NextRequest) {
 
   // Until domain is verified, onboarding@resend.dev can only deliver to the Resend account owner.
   // Sending to davidbensondds@gmail.com so the link is accessible during testing.
-  const { error: emailError } = await resend.emails.send({
+  console.log("Resend key present:", !!process.env.RESEND_API_KEY);
+  const { data: emailData, error: emailError } = await resend.emails.send({
     from: "onboarding@resend.dev",
     to: "davidbensondds@gmail.com",
     subject: `[Intake for ${name}] Pre-appointment link`,
@@ -66,7 +67,9 @@ export async function POST(request: NextRequest) {
   });
 
   if (emailError) {
-    console.error("Resend error (patients/new):", emailError);
+    console.error("Resend error:", JSON.stringify(emailError));
+  } else {
+    console.log("Resend success, email id:", emailData?.id);
   }
 
   return NextResponse.json({ success: true, patientId: patient.id, intakeLink });
