@@ -17,7 +17,23 @@ export default async function DashboardPage() {
     .eq("user_id", user.id)
     .single();
 
-  if (!practice) redirect("/signup");
+  if (!practice) {
+    return (
+      <main style={{ minHeight: "100vh", background: "#F7F5F0", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px" }}>
+        <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
+          <h1 style={{ fontFamily: "Lora, Georgia, serif", fontSize: "26px", fontWeight: 400, color: "#1A2B3C", marginBottom: "12px" }}>
+            Finish setting up your practice
+          </h1>
+          <p style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", color: "#4A5568", marginBottom: "28px" }}>
+            Your account exists but your practice profile is incomplete. Complete it to access your dashboard.
+          </p>
+          <Link href="/signup" style={{ background: "#0E6B5E", color: "#fff", padding: "12px 28px", borderRadius: "8px", textDecoration: "none", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", fontWeight: 500 }}>
+            Complete setup
+          </Link>
+        </div>
+      </main>
+    );
+  }
 
   const { data: patients } = await supabase
     .from("dd_patients")
