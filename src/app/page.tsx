@@ -24,7 +24,20 @@ export default function LandingPage() {
               <a href="#how-it-works" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>How it works</a>
               <a href="#sample-report" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Sample report</a>
               <a href="#pricing" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Pricing</a>
-              <a href="#tensiondx" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>TensionDx</a>
+              <div className="lp-tools-dropdown" style={{ cursor: "default" }}>
+                <span style={{ fontSize: 13, color: "#4A5568", display: "flex", alignItems: "center", gap: 4 }}>
+                  Tools <span style={{ fontSize: 9, opacity: 0.5 }}>▾</span>
+                </span>
+                <div className="lp-tools-menu">
+                  <div className="lp-tools-menu-label">Add-on modules</div>
+                  <a href="#tensiondx">TensionDx — Conflict triage</a>
+                  <a href="#noshowpredictor">No-Show Predictor</a>
+                  <a href="#treatmentcoach">Treatment Acceptance Coach</a>
+                  <a href="#lapsedpatients">Lapsed Patient Reactivation</a>
+                  <a href="#reviewwarning">Negative Review Warning</a>
+                  <a href="#electivecases">Elective Case Identifier</a>
+                </div>
+              </div>
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 5,
                 background: "#E4F2F0", color: "#0E6B5E",
@@ -386,18 +399,31 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* TensionDx add-on */}
-          <div style={{ maxWidth: 660, marginTop: "1.25rem" }}>
-            <div style={{ background: "rgba(255,255,255,0.04)", border: "0.5px solid rgba(180,130,80,0.35)", borderRadius: 12, padding: "1.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+          {/* Add-on modules */}
+          <div style={{ maxWidth: 900, marginTop: "3rem" }}>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.35)", letterSpacing: "1.5px", marginBottom: 16, fontWeight: 500 }}>Add-on modules — $99/month each</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem", marginBottom: "1.25rem" }}>
+              {[
+                { id: "tensiondx", name: "TensionDx", desc: "Upset patient triage and de-escalation scripts" },
+                { id: "noshowpredictor", name: "No-Show Predictor", desc: "Behavioral risk flag before the appointment" },
+                { id: "treatmentcoach", name: "Treatment Coach", desc: "Case presentation language by behavioral profile" },
+                { id: "lapsedpatients", name: "Lapsed Reactivation", desc: "Personalized outreach from behavioral history" },
+                { id: "reviewwarning", name: "Review Warning", desc: "Flag patients likely to post publicly" },
+                { id: "electivecases", name: "Elective Identifier", desc: "Surface patients primed for elective treatment" },
+              ].map((m) => (
+                <a key={m.id} href={`#${m.id}`} style={{ display: "block", background: "rgba(255,255,255,0.04)", border: "0.5px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: "14px 16px", textDecoration: "none" }}>
+                  <p style={{ fontSize: 12, fontWeight: 500, color: "#D4924A", marginBottom: 4 }}>{m.name}</p>
+                  <p style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", fontWeight: 300, lineHeight: 1.5 }}>{m.desc}</p>
+                </a>
+              ))}
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(180,130,80,0.4)", borderRadius: 12, padding: "1.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                  <span style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.4)", letterSpacing: "1px" }}>Add-on</span>
-                  <span style={{ fontSize: 11, background: "rgba(180,130,80,0.2)", color: "#D4924A", padding: "2px 8px", borderRadius: 20, letterSpacing: "0.05em" }}>TensionDx</span>
-                </div>
-                <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#fff", marginBottom: 4 }}>$99<span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>/month</span></p>
-                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>Upset patient triage and de-escalation scripts. Available on any plan.</p>
+                <p style={{ fontSize: 11, textTransform: "uppercase", color: "#D4924A", letterSpacing: "1px", marginBottom: 8 }}>Full Suite Bundle</p>
+                <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 28, color: "#fff", marginBottom: 4 }}>+$399<span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>/month</span></p>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>All six modules added to your base plan. Save $195/month versus individual pricing.</p>
               </div>
-              <a href="#tensiondx" style={{ flexShrink: 0, fontSize: 13, color: "rgba(255,255,255,0.6)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.2)", padding: "2px 0" }}>Learn more →</a>
+              <a href="/signup" style={{ flexShrink: 0, padding: "10px 22px", background: "#D4924A", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 13, fontWeight: 500 }}>Request access</a>
             </div>
           </div>
         </div>
@@ -407,9 +433,9 @@ export default function LandingPage() {
       <section id="tensiondx" style={{ background: "#fff", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
         <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
           <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>TensionDx — Add-on module</p>
-          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>When a patient is upset, you need more than a good bedside manner.</h2>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>When a patient mentions a lawyer, you have about 48 hours.</h2>
           <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
-            TensionDx reads the psychological drivers behind a patient&apos;s anger and tells you what they actually need — not what they said to the front desk. It delivers a specific de-escalation script and triage assessment before the situation has a chance to become legal.
+            This is not conflict resolution advice. It is a psychological read of what your patient actually needs to hear, and the specific language to say it. One prevented lawsuit covers years of subscription cost.
           </p>
 
           <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start", marginBottom: "3.5rem" }}>
@@ -474,6 +500,332 @@ export default function LandingPage() {
                   <strong>$99/month</strong> add-on. Available on Solo and Group plans.
                 </p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access to TensionDx →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NO-SHOW PREDICTOR */}
+      <section id="noshowpredictor" style={{ background: "#F7F5F0", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>No-Show Predictor — Add-on module</p>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>Your 2pm no-show was predictable. Next time it will be predicted.</h2>
+          <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
+            One prevented no-show per week at an average appointment value of $300 is $15,000 recovered annually. The predictor runs automatically from the intake — no extra steps.
+          </p>
+          <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start" }}>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 14, fontWeight: 500 }}>Sample flag</p>
+              <div style={{ background: "#fff", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ background: "#1A2B3C", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.8px", color: "rgba(255,255,255,0.5)" }}>No-Show Risk Flag</span>
+                  <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#E07070" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#E07070", display: "inline-block" }} />
+                    High risk
+                  </span>
+                </div>
+                <div style={{ padding: "20px" }}>
+                  <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: "0.5px solid #E2DDD5" }}>
+                    <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 18, color: "#1A2B3C", marginBottom: 3 }}>James R., 44</p>
+                    <p style={{ fontSize: 12, color: "#4A5568" }}>New patient &middot; Thursday 2:00 PM</p>
+                  </div>
+                  <div style={{ marginBottom: 12 }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Signals</p>
+                    {["Rescheduled twice during intake window", "Vague on reason for gap from prior dentist", "Non-committal language throughout responses"].map((s) => (
+                      <p key={s} style={{ fontSize: 13, color: "#4A5568", marginBottom: 5, display: "flex", gap: 8, alignItems: "flex-start" }}>
+                        <span style={{ color: "#E07070", flexShrink: 0 }}>·</span>{s}
+                      </p>
+                    ))}
+                  </div>
+                  <div style={{ background: "#FBF0EF", border: "0.5px solid #E8BFBF", borderRadius: 8, padding: "12px 14px" }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#9B3B3B", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Recommended action</p>
+                    <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.65 }}>Same-day confirmation call from staff. Consider holding the slot until confirmed. Specific call script provided.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 20, fontWeight: 500 }}>How it works</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {[
+                  { n: "01", title: "Intake runs as normal", body: "The patient completes their standard behavioral intake before the appointment. No extra questions, no extra steps." },
+                  { n: "02", title: "Risk signals are scored automatically", body: "Language patterns, rescheduling behavior, and commitment markers are scored against no-show indicators from the behavioral profile." },
+                  { n: "03", title: "Flag arrives with the report", body: "High-risk appointments are flagged before they happen with a specific recommended action — call, confirm, or hold the slot." },
+                ].map((step) => (
+                  <div key={step.n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#E2DDD5", lineHeight: 1, flexShrink: 0, width: 36 }}>{step.n}</span>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{step.title}</p>
+                      <p style={{ fontSize: 13, color: "#4A5568", fontWeight: 300, lineHeight: 1.7 }}>{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#fff", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TREATMENT ACCEPTANCE COACH */}
+      <section id="treatmentcoach" style={{ background: "#fff", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>Treatment Acceptance Coach — Add-on module</p>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>They said yes in the chair. They never called to schedule.</h2>
+          <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
+            The behavioral profile already knows who is cost-avoidant, shame-driven, or decision-paralyzed. The coach surfaces that at the moment of case presentation with language that closes the plan.
+          </p>
+          <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start" }}>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 14, fontWeight: 500 }}>Sample coaching card</p>
+              <div style={{ background: "#F7F5F0", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ background: "#1A2B3C", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.8px", color: "rgba(255,255,255,0.5)" }}>Treatment Acceptance Coach</span>
+                  <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#D4924A" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#D4924A", display: "inline-block" }} />
+                    Moderate-high risk
+                  </span>
+                </div>
+                <div style={{ padding: "20px" }}>
+                  <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: "0.5px solid #E2DDD5" }}>
+                    <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 18, color: "#1A2B3C", marginBottom: 3 }}>Maria S., 52</p>
+                    <p style={{ fontSize: 12, color: "#4A5568" }}>$4,200 restorative plan to be presented</p>
+                  </div>
+                  {[
+                    { label: "Acceptance risk", value: "Moderate-high", color: "#B07D2E" },
+                    { label: "Driver", value: "Cost anxiety intersecting with shame. Will not raise money herself.", color: "#1A2B3C" },
+                    { label: "Recommended approach", value: "Present the financial pathway before the clinical plan.", color: "#0E6B5E" },
+                  ].map((row) => (
+                    <div key={row.label} style={{ marginBottom: 12 }}>
+                      <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>{row.label}</p>
+                      <p style={{ fontSize: 13, color: row.color, fontWeight: 500 }}>{row.value}</p>
+                    </div>
+                  ))}
+                  <div style={{ background: "#FDF4E3", border: "0.5px solid #E8C87A", borderRadius: 8, padding: "12px 14px", marginTop: 8 }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Suggested framing</p>
+                    <p style={{ fontSize: 12, color: "#4A5568", fontStyle: "italic", lineHeight: 1.65, filter: "blur(3.5px)", userSelect: "none" }}>
+                      &ldquo;Before I show you what I&apos;m seeing, I want to walk you through how most patients handle the financial side — because that usually makes the clinical conversation easier.&rdquo;
+                    </p>
+                    <p style={{ fontSize: 10, color: "#B07D2E", marginTop: 6 }}>Opening line — full script in report</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 20, fontWeight: 500 }}>How it works</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {[
+                  { n: "01", title: "Behavioral profile identifies the obstacle", body: "Cost anxiety, shame, decision paralysis, trust deficit — each leaves a distinct pattern in the intake. The coach identifies which one applies before you walk in." },
+                  { n: "02", title: "Presentation sequence is reordered", body: "For cost-avoidant patients, financial pathway first. For shame-driven patients, normalization first. The clinical information is the same. The order changes everything." },
+                  { n: "03", title: "Specific language delivered before the appointment", body: "Not talking points. A specific opening sentence, calibrated to this patient, to use at the moment the plan is presented." },
+                ].map((step) => (
+                  <div key={step.n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#E2DDD5", lineHeight: 1, flexShrink: 0, width: 36 }}>{step.n}</span>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{step.title}</p>
+                      <p style={{ fontSize: 13, color: "#4A5568", fontWeight: 300, lineHeight: 1.7 }}>{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LAPSED PATIENT REACTIVATION */}
+      <section id="lapsedpatients" style={{ background: "#F7F5F0", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>Lapsed Patient Reactivation — Add-on module</p>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>The cheapest revenue in your practice is already in your system.</h2>
+          <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
+            Reactivating five lapsed patients per month at an average annual value of $500 each is $30,000 in recovered revenue. The message is generated from their original behavioral profile — not a generic blast.
+          </p>
+          <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start" }}>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 14, fontWeight: 500 }}>Sample reactivation card</p>
+              <div style={{ background: "#fff", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ background: "#1A2B3C", padding: "12px 20px" }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.8px", color: "rgba(255,255,255,0.5)" }}>Lapsed Patient Reactivation</span>
+                </div>
+                <div style={{ padding: "20px" }}>
+                  <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: "0.5px solid #E2DDD5" }}>
+                    <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 18, color: "#1A2B3C", marginBottom: 3 }}>Donna K., 61</p>
+                    <p style={{ fontSize: 12, color: "#4A5568" }}>Last visit 28 months ago</p>
+                  </div>
+                  <div style={{ marginBottom: 16 }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>Lapse driver</p>
+                    <p style={{ fontSize: 13, color: "#1A2B3C" }}>Felt judged after treatment was not completed. Embarrassed to return.</p>
+                  </div>
+                  <div style={{ background: "#E4F2F0", border: "0.5px solid #A8D5CC", borderRadius: 8, padding: "12px 14px" }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "0.8px", marginBottom: 8, fontWeight: 500 }}>Generated outreach (SMS/email)</p>
+                    <p style={{ fontSize: 12.5, color: "#1A2B3C", fontStyle: "italic", lineHeight: 1.75, filter: "blur(3.5px)", userSelect: "none" }}>
+                      Hi Donna — this is Dr. Chen&apos;s office. We have been thinking about you and wanted to reach out with no pressure at all. We know life gets busy and sometimes it is hard to get back in. We would love to see you when you are ready — just reply here and we will take care of the rest.
+                    </p>
+                    <p style={{ fontSize: 10, color: "#0E6B5E", marginTop: 8 }}>Message generated from original behavioral profile — not a template</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 20, fontWeight: 500 }}>How it works</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {[
+                  { n: "01", title: "System identifies lapsed patients", body: "Patients who have not returned within a configured window are surfaced, ranked by reactivation likelihood based on their behavioral profile." },
+                  { n: "02", title: "Lapse driver is identified", body: "Why they stopped coming is not always obvious. The original intake reveals whether it was shame, cost, a bad experience, or simply drift — each requires different language." },
+                  { n: "03", title: "Message generated and ready to send", body: "A personalized SMS or email is generated for each patient, written to the specific barrier identified in their profile. Not a merge-tag template. A real message." },
+                ].map((step) => (
+                  <div key={step.n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#E2DDD5", lineHeight: 1, flexShrink: 0, width: 36 }}>{step.n}</span>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{step.title}</p>
+                      <p style={{ fontSize: 13, color: "#4A5568", fontWeight: 300, lineHeight: 1.7 }}>{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#fff", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEGATIVE REVIEW WARNING */}
+      <section id="reviewwarning" style={{ background: "#fff", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>Negative Review Warning — Add-on module</p>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>One bad Google review costs you ten new patients.</h2>
+          <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
+            The behavioral profile flags review risk the same way it flags legal risk. The window to change the outcome closes when they walk out the door.
+          </p>
+          <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start" }}>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 14, fontWeight: 500 }}>Sample warning</p>
+              <div style={{ background: "#F7F5F0", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ background: "#1A2B3C", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.8px", color: "rgba(255,255,255,0.5)" }}>Review Risk Flag</span>
+                  <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#E07070" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#E07070", display: "inline-block" }} />
+                    Elevated
+                  </span>
+                </div>
+                <div style={{ padding: "20px" }}>
+                  <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: "0.5px solid #E2DDD5" }}>
+                    <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 18, color: "#1A2B3C", marginBottom: 3 }}>Robert T., 47</p>
+                    <p style={{ fontSize: 12, color: "#4A5568" }}>End of appointment &middot; Checkout in 8 minutes</p>
+                  </div>
+                  <div style={{ marginBottom: 12 }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Signals</p>
+                    {["Referenced prior negative provider experience in intake", "Language suggesting unmet expectations throughout visit", "Non-verbal disengagement noted at checkout"].map((s) => (
+                      <p key={s} style={{ fontSize: 13, color: "#4A5568", marginBottom: 5, display: "flex", gap: 8, alignItems: "flex-start" }}>
+                        <span style={{ color: "#E07070", flexShrink: 0 }}>·</span>{s}
+                      </p>
+                    ))}
+                  </div>
+                  <div style={{ background: "#FBF0EF", border: "0.5px solid #E8BFBF", borderRadius: 8, padding: "12px 14px" }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#9B3B3B", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Recommended action</p>
+                    <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.65 }}>Doctor returns to operatory before patient leaves. Specific language for closing the visit differently is provided.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 20, fontWeight: 500 }}>How it works</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {[
+                  { n: "01", title: "Profile flags review-prone patterns", body: "Prior negative provider experience, unmet expectation language, and low trust markers are scored at intake — before the patient arrives." },
+                  { n: "02", title: "In-appointment alert surfaces at checkout", body: "When a high-risk patient is approaching the end of their appointment, the front desk receives an alert with a specific closing action." },
+                  { n: "03", title: "Doctor closes the visit differently", body: "A 90-second conversation, scripted to the specific risk pattern, before the patient reaches the parking lot. That is the window." },
+                ].map((step) => (
+                  <div key={step.n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#E2DDD5", lineHeight: 1, flexShrink: 0, width: 36 }}>{step.n}</span>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{step.title}</p>
+                      <p style={{ fontSize: 13, color: "#4A5568", fontWeight: 300, lineHeight: 1.7 }}>{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ELECTIVE CASE IDENTIFIER */}
+      <section id="electivecases" style={{ background: "#F7F5F0", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>Elective Case Identifier — Add-on module</p>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 680 }}>Someone in your existing patient base is ready to say yes to veneers. You just do not know who.</h2>
+          <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
+            You are not blasting your patient list with a whitening promotion. You are calling three people who are already thinking about it. That is a different conversation with a different close rate.
+          </p>
+          <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start" }}>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 14, fontWeight: 500 }}>Sample identifier card</p>
+              <div style={{ background: "#fff", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ background: "#1A2B3C", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.8px", color: "rgba(255,255,255,0.5)" }}>Elective Case Identifier</span>
+                  <span style={{ fontSize: 11, color: "#7DD4C4" }}>3 flagged this month</span>
+                </div>
+                <div style={{ padding: "20px" }}>
+                  <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: "0.5px solid #E2DDD5" }}>
+                    <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 18, color: "#1A2B3C", marginBottom: 3 }}>Susan M., 34</p>
+                    <p style={{ fontSize: 12, color: "#4A5568" }}>Patient since 2022 &middot; Next hygiene visit: May 8</p>
+                  </div>
+                  {[
+                    { label: "Elective readiness", value: "High", color: "#0E6B5E" },
+                    { label: "Signals", value: "Mentioned appearance in intake, high compliance history, no unresolved financial friction", color: "#1A2B3C" },
+                  ].map((row) => (
+                    <div key={row.label} style={{ marginBottom: 12 }}>
+                      <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>{row.label}</p>
+                      <p style={{ fontSize: 13, color: row.color }}>{row.value}</p>
+                    </div>
+                  ))}
+                  <div style={{ background: "#E4F2F0", border: "0.5px solid #A8D5CC", borderRadius: 8, padding: "12px 14px", marginTop: 8 }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Suggested outreach</p>
+                    <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.65, marginBottom: 6 }}>Soft mention of cosmetic consultation at next hygiene visit. Specific conversation opener provided.</p>
+                    <p style={{ fontSize: 12, color: "#4A5568", fontStyle: "italic", filter: "blur(3.5px)", userSelect: "none" }}>
+                      &ldquo;Susan, I noticed something at your last visit that I think you might find interesting — when you have a moment I would love to show you what I&apos;m seeing.&rdquo;
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 20, fontWeight: 500 }}>How it works</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {[
+                  { n: "01", title: "Behavioral profile scores elective readiness", body: "Appearance mentions, compliance patterns, financial friction, and trust markers from the original intake are scored for elective case likelihood." },
+                  { n: "02", title: "Patients are surfaced monthly", body: "A short list of existing patients who are behaviorally primed for elective conversation arrives each month — not a ranked export of your entire base." },
+                  { n: "03", title: "Outreach language is provided", body: "A specific conversation opener for each flagged patient, written to how they communicate and what they mentioned. Not a script. A sentence." },
+                ].map((step) => (
+                  <div key={step.n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#E2DDD5", lineHeight: 1, flexShrink: 0, width: 36 }}>{step.n}</span>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{step.title}</p>
+                      <p style={{ fontSize: 13, color: "#4A5568", fontWeight: 300, lineHeight: 1.7 }}>{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#fff", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
               </div>
             </div>
           </div>
