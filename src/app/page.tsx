@@ -416,7 +416,7 @@ export default function LandingPage() {
         </p>
         <a href="/signup" style={{ display: "inline-block", background: "#fff", color: "#0E6B5E", padding: "13px 32px", borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 500 }}>Request access</a>
         <p style={{ marginTop: 20, fontSize: 12, color: "rgba(255,255,255,0.55)" }}>
-          Or email directly: <a href="mailto:david@dentaldiagnostix.com" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "underline" }}>david@dentaldiagnostix.com</a>
+          Or email directly: <a href="mailto:davidbensondds@gmail.com" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "underline" }}>davidbensondds@gmail.com</a>
         </p>
       </section>
 
