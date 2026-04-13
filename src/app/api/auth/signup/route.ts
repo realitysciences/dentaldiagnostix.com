@@ -22,11 +22,11 @@ export async function POST(_request: NextRequest) {
     email_confirm: true, // skip email confirmation so they can log in immediately
   });
 
-  if (userError) {
-    return NextResponse.json({ error: userError.message }, { status: 400 });
+  if (userError || !userData?.user) {
+    return NextResponse.json({ error: userError?.message ?? "Signup failed" }, { status: 400 });
   }
 
-  const userId = userData.user.id;
+  const userId = userData.user!.id;
 
   const { error: practiceError } = await supabase.from("dd_practices").insert({
     user_id: userId,
@@ -39,7 +39,7 @@ export async function POST(_request: NextRequest) {
     // Roll back: delete the user we just created
     await supabase.auth.admin.deleteUser(userId);
     console.error("Practice insert error:", practiceError);
-    return NextResponse.json({ error: practiceError.message }, { status: 500 });
+    return NextResponse.json({ error: practiceError?.message ?? "Failed to create practice" }, { status: 500 });
   }
 
   return NextResponse.json({ success: true });

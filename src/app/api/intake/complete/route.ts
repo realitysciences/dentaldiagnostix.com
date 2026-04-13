@@ -171,9 +171,6 @@ export async function POST(request: NextRequest) {
   }
 
   // Send email to dentist
-  const appUrl =
-    process.env.NEXT_PUBLIC_APP_URL || "https://dentaldiagnostix.com";
-
   const emailHtml = buildReportEmail(
     savedReport as Report,
     patient as Patient,
