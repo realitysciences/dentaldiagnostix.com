@@ -217,7 +217,7 @@ export default function LandingPage() {
             <p style={{ fontSize: 14, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, marginBottom: 32 }}>
               Patients respond by voice or by typing, in their own words, without checkboxes or clinical framing. Nothing about it feels like a medical intake. That is intentional.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: 24 }}>
               {[
                 { label: "Covers", value: "Avoidance history · Past provider relationships · Treatment decision patterns · Emotional context" },
                 { label: "Format", value: "Voice or text · Any device · No login required · One question at a time" },
@@ -228,6 +228,12 @@ export default function LandingPage() {
                   <span style={{ fontSize: 13, color: "#4A5568", lineHeight: 1.65 }}>{item.value}</span>
                 </div>
               ))}
+            </div>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "12px 14px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+              <span style={{ color: "#0E6B5E", fontSize: 14, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>·</span>
+              <p style={{ fontSize: 12, color: "#4A5568", lineHeight: 1.65, margin: 0 }}>
+                <strong style={{ color: "#1A2B3C", fontWeight: 500 }}>Patients never see the DentalDiagnostix name.</strong> The intake arrives under your practice name and branding. To them, it is simply part of their appointment preparation.
+              </p>
             </div>
           </div>
 
@@ -243,8 +249,8 @@ export default function LandingPage() {
 
             {/* Practice header */}
             <div style={{ background: "#1A2B3C", padding: "14px 20px" }}>
-              <p style={{ margin: 0, fontSize: 10, textTransform: "uppercase", letterSpacing: "1.5px", color: "#7DD4C4" }}>DentalDiagnostix</p>
-              <p style={{ margin: "3px 0 0", fontFamily: "Lora, Georgia, serif", fontSize: 14, color: "#fff", fontWeight: 400 }}>Pre-visit check-in &middot; Dr. Kim&apos;s Family Dental</p>
+              <p style={{ margin: 0, fontSize: 10, textTransform: "uppercase", letterSpacing: "1.5px", color: "#7DD4C4" }}>Dr. Kim&apos;s Family Dental</p>
+              <p style={{ margin: "3px 0 0", fontFamily: "Lora, Georgia, serif", fontSize: 14, color: "#fff", fontWeight: 400 }}>Pre-visit check-in &middot; Before your appointment</p>
             </div>
 
             {/* Progress bar */}
