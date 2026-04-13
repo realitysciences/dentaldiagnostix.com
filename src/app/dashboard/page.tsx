@@ -74,25 +74,22 @@ export default async function DashboardPage() {
           justifyContent: "space-between",
         }}
       >
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <span
-            style={{
-              fontFamily: "Lora, Georgia, serif",
-              fontSize: "18px",
-              color: "#fff",
-              letterSpacing: "0.3px",
-            }}
-          >
-            DentalDiagnostix
-          </span>
-        </Link>
-        <span
-          style={{
-            fontFamily: "DM Sans, Arial, sans-serif",
-            fontSize: "13px",
-            color: "#A0B0C0",
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", gap: "28px" }}>
+          <Link href="/" style={{ textDecoration: "none" }}>
+            <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: "18px", color: "#fff", letterSpacing: "0.3px" }}>
+              DentalDiagnostix
+            </span>
+          </Link>
+          <nav style={{ display: "flex", gap: "20px" }}>
+            <Link href="/dashboard" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#7DD4C4", textDecoration: "none", fontWeight: 500 }}>
+              Patients
+            </Link>
+            <Link href="/dashboard/roi" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0", textDecoration: "none" }}>
+              ROI
+            </Link>
+          </nav>
+        </div>
+        <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0" }}>
           {practice.practice_name}
         </span>
       </header>
