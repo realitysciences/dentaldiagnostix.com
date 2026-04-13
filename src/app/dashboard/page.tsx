@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import LogOutcomeButton from "./LogOutcomeButton";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -40,6 +41,13 @@ export default async function DashboardPage() {
     .select("*")
     .eq("practice_id", practice.id)
     .order("created_at", { ascending: false });
+
+  const { data: outcomes } = await supabase
+    .from("dd_outcomes")
+    .select("patient_id")
+    .eq("practice_id", practice.id);
+
+  const outcomePatientIds = new Set((outcomes ?? []).map((o: { patient_id: string }) => o.patient_id));
 
   const statusLabel = (s: string) => {
     if (s === "complete") return { text: "Complete", color: "#0E6B5E", bg: "#E4F2F0" };
@@ -173,7 +181,7 @@ export default async function DashboardPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ borderBottom: "1px solid #E2DDD5" }}>
-                  {["Name", "Email", "Status", "Date sent", ""].map((h) => (
+                  {["Name", "Email", "Status", "Date sent", "Actions"].map((h) => (
                     <th
                       key={h}
                       style={{
@@ -254,23 +262,31 @@ export default async function DashboardPage() {
                           {formatDate(p.created_at)}
                         </td>
                         <td style={{ padding: "14px 20px" }}>
-                          {p.status === "complete" && (
-                            <Link
-                              href={`/reports/${p.id}`}
-                              style={{
-                                color: "#0E6B5E",
-                                textDecoration: "none",
-                                fontFamily: "DM Sans, Arial, sans-serif",
-                                fontSize: "13px",
-                                fontWeight: 500,
-                                border: "1px solid #0E6B5E",
-                                padding: "4px 12px",
-                                borderRadius: "6px",
-                              }}
-                            >
-                              View report
-                            </Link>
-                          )}
+                          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+                            {p.status === "complete" && (
+                              <Link
+                                href={`/reports/${p.id}`}
+                                style={{
+                                  color: "#0E6B5E",
+                                  textDecoration: "none",
+                                  fontFamily: "DM Sans, Arial, sans-serif",
+                                  fontSize: "13px",
+                                  fontWeight: 500,
+                                  border: "1px solid #0E6B5E",
+                                  padding: "4px 12px",
+                                  borderRadius: "6px",
+                                }}
+                              >
+                                View report
+                              </Link>
+                            )}
+                            {p.status === "complete" && (
+                              <LogOutcomeButton
+                                patientId={p.id}
+                                hasOutcome={outcomePatientIds.has(p.id)}
+                              />
+                            )}
+                          </div>
                         </td>
                       </tr>
                     );
