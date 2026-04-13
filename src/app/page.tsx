@@ -383,31 +383,31 @@ export default function LandingPage() {
           <div className="lp-pricing-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem", maxWidth: 660 }}>
             <div style={{ background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(255,255,255,0.12)", borderRadius: 12, padding: "2rem" }}>
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.4)", letterSpacing: "1px", marginBottom: 16 }}>Solo practice</p>
-              <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 38, color: "#fff", marginBottom: 4 }}>$249<span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>/month</span></p>
+              <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 38, color: "#fff", marginBottom: 4, filter: "blur(6px)", userSelect: "none" }}>$000<span style={{ fontSize: 12 }}>/month</span></p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300, marginBottom: 24 }}>One provider. Unlimited new patient behavioral reports.</p>
               {["Full terrain report with dos and donts", "Legal risk flag system", "Dentist history summary", "PDF export for patient record"].map((f) => (
                 <p key={f} style={{ fontSize: 13, color: "rgba(255,255,255,0.65)", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
                   <span style={{ color: "#0E6B5E", fontSize: 16, lineHeight: "20px", flexShrink: 0 }}>·</span>{f}
                 </p>
               ))}
-              <a href="/signup" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 14 }}>Request access</a>
+              <a href="mailto:davidbensondds@gmail.com" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 14 }}>Contact for pricing</a>
             </div>
             <div style={{ background: "#0E6B5E", border: "0.5px solid rgba(255,255,255,0.12)", borderRadius: 12, padding: "2rem" }}>
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.7)", letterSpacing: "1px", marginBottom: 16 }}>Group practice</p>
-              <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 38, color: "#fff", marginBottom: 4 }}>$549<span style={{ fontSize: 12, color: "rgba(255,255,255,0.6)" }}>/month</span></p>
+              <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 38, color: "#fff", marginBottom: 4, filter: "blur(6px)", userSelect: "none" }}>$000<span style={{ fontSize: 12 }}>/month</span></p>
               <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", fontWeight: 300, marginBottom: 24 }}>Up to 5 providers. Practice dashboard and compliance trend tracking.</p>
               {["Everything in Solo", "Multi-provider dashboard", "Compliance trend analytics", "Priority support"].map((f) => (
                 <p key={f} style={{ fontSize: 13, color: "rgba(255,255,255,0.85)", marginBottom: 8, display: "flex", alignItems: "flex-start", gap: 8 }}>
                   <span style={{ fontSize: 16, lineHeight: "20px", flexShrink: 0 }}>·</span>{f}
                 </p>
               ))}
-              <a href="/signup" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", background: "#fff", borderRadius: 8, color: "#0E6B5E", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Request access</a>
+              <a href="mailto:davidbensondds@gmail.com" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", background: "#fff", borderRadius: 8, color: "#0E6B5E", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Contact for pricing</a>
             </div>
           </div>
 
           {/* Add-on modules */}
           <div style={{ maxWidth: 900, marginTop: "3rem" }}>
-            <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.35)", letterSpacing: "1.5px", marginBottom: 16, fontWeight: 500 }}>Add-on modules — $99/month each</p>
+            <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.35)", letterSpacing: "1.5px", marginBottom: 16, fontWeight: 500 }}>Add-on modules</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem", marginBottom: "1.25rem" }}>
               {[
                 { id: "tensiondx", name: "TensionDx", desc: "Upset patient triage and de-escalation scripts" },
@@ -426,12 +426,13 @@ export default function LandingPage() {
             <div style={{ background: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(180,130,80,0.4)", borderRadius: 12, padding: "1.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
               <div>
                 <p style={{ fontSize: 11, textTransform: "uppercase", color: "#D4924A", letterSpacing: "1px", marginBottom: 8 }}>Full Suite Bundle</p>
-                <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 28, color: "#fff", marginBottom: 4 }}>+$399<span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>/month</span></p>
-                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>All six modules added to your base plan. Save $195/month versus individual pricing.</p>
+                <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 28, color: "#fff", marginBottom: 4, filter: "blur(6px)", userSelect: "none" }}>+$000<span style={{ fontSize: 12 }}>/month</span></p>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>All six modules added to your base plan. Contact for bundle pricing.</p>
               </div>
-              <a href="/signup" style={{ flexShrink: 0, padding: "10px 22px", background: "#D4924A", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 13, fontWeight: 500 }}>Request access</a>
+              <a href="mailto:davidbensondds@gmail.com" style={{ flexShrink: 0, padding: "10px 22px", background: "#D4924A", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 13, fontWeight: 500 }}>Contact for pricing</a>
             </div>
           </div>
+          <p style={{ marginTop: 24, fontSize: 13, color: "rgba(255,255,255,0.35)" }}>Pricing is set during early access. Email <a href="mailto:davidbensondds@gmail.com" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "underline" }}>davidbensondds@gmail.com</a> to discuss.</p>
         </div>
       </section>
 
@@ -503,7 +504,7 @@ export default function LandingPage() {
               </div>
               <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
                 <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}>
-                  <strong>$99/month</strong> add-on. Available on Solo and Group plans.
+                  <strong style={{ filter: "blur(5px)", userSelect: "none" }}>$99/month</strong> add-on. <a href="mailto:davidbensondds@gmail.com" style={{ color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Contact for pricing</a>
                 </p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access to TensionDx →</a>
               </div>
@@ -569,7 +570,7 @@ export default function LandingPage() {
                 ))}
               </div>
               <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#fff", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
-                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong style={{ filter: "blur(5px)", userSelect: "none" }}>$99/month</strong> add-on. <a href="mailto:davidbensondds@gmail.com" style={{ color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Contact for pricing</a></p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
               </div>
             </div>
@@ -639,7 +640,7 @@ export default function LandingPage() {
                 ))}
               </div>
               <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
-                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong style={{ filter: "blur(5px)", userSelect: "none" }}>$99/month</strong> add-on. <a href="mailto:davidbensondds@gmail.com" style={{ color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Contact for pricing</a></p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
               </div>
             </div>
@@ -699,7 +700,7 @@ export default function LandingPage() {
                 ))}
               </div>
               <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#fff", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
-                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong style={{ filter: "blur(5px)", userSelect: "none" }}>$99/month</strong> add-on. <a href="mailto:davidbensondds@gmail.com" style={{ color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Contact for pricing</a></p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
               </div>
             </div>
@@ -764,7 +765,7 @@ export default function LandingPage() {
                 ))}
               </div>
               <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
-                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong style={{ filter: "blur(5px)", userSelect: "none" }}>$99/month</strong> add-on. <a href="mailto:davidbensondds@gmail.com" style={{ color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Contact for pricing</a></p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
               </div>
             </div>
@@ -830,7 +831,7 @@ export default function LandingPage() {
                 ))}
               </div>
               <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#fff", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
-                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong>$99/month</strong> add-on. Available on Solo and Group plans.</p>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}><strong style={{ filter: "blur(5px)", userSelect: "none" }}>$99/month</strong> add-on. <a href="mailto:davidbensondds@gmail.com" style={{ color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Contact for pricing</a></p>
                 <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access →</a>
               </div>
             </div>
