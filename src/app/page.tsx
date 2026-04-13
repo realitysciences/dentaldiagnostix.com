@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LandingPage() {
   return (
     <>
@@ -22,6 +24,7 @@ export default function LandingPage() {
               <a href="#how-it-works" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>How it works</a>
               <a href="#sample-report" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Sample report</a>
               <a href="#pricing" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Pricing</a>
+              <a href="#tensiondx" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>TensionDx</a>
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 5,
                 background: "#E4F2F0", color: "#0E6B5E",
@@ -380,6 +383,98 @@ export default function LandingPage() {
                 </p>
               ))}
               <a href="/signup" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", background: "#fff", borderRadius: 8, color: "#0E6B5E", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Request access</a>
+            </div>
+          </div>
+
+          {/* TensionDx add-on */}
+          <div style={{ maxWidth: 660, marginTop: "1.25rem" }}>
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "0.5px solid rgba(180,130,80,0.35)", borderRadius: 12, padding: "1.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.4)", letterSpacing: "1px" }}>Add-on</span>
+                  <span style={{ fontSize: 11, background: "rgba(180,130,80,0.2)", color: "#D4924A", padding: "2px 8px", borderRadius: 20, letterSpacing: "0.05em" }}>TensionDx</span>
+                </div>
+                <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#fff", marginBottom: 4 }}>$99<span style={{ fontSize: 12, color: "rgba(255,255,255,0.4)" }}>/month</span></p>
+                <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>Upset patient triage and de-escalation scripts. Available on any plan.</p>
+              </div>
+              <a href="#tensiondx" style={{ flexShrink: 0, fontSize: 13, color: "rgba(255,255,255,0.6)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.2)", padding: "2px 0" }}>Learn more →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TENSIONDX */}
+      <section id="tensiondx" style={{ background: "#fff", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>TensionDx — Add-on module</p>
+          <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.3, maxWidth: 620 }}>When a patient is upset, you need more than a good bedside manner.</h2>
+          <p style={{ fontSize: 15, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, maxWidth: 640, marginBottom: "3rem" }}>
+            TensionDx reads the psychological drivers behind a patient&apos;s anger and tells you what they actually need — not what they said to the front desk. It delivers a specific de-escalation script and triage assessment before the situation has a chance to become legal.
+          </p>
+
+          <div className="lp-two-col" style={{ gap: "3rem", alignItems: "flex-start", marginBottom: "3.5rem" }}>
+            {/* Sample output card */}
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 14, fontWeight: 500 }}>Sample output</p>
+              <div style={{ background: "#F7F5F0", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
+                <div style={{ background: "#1A2B3C", padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "0.8px", color: "rgba(255,255,255,0.5)" }}>TensionDx &mdash; Upset Patient Triage</span>
+                  <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 11, color: "#D4924A" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#D4924A", display: "inline-block" }} />
+                    Moderate risk
+                  </span>
+                </div>
+                <div style={{ padding: "20px" }}>
+                  <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: "0.5px solid #E2DDD5" }}>
+                    <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 18, color: "#1A2B3C", marginBottom: 3 }}>Patricia H., 58</p>
+                    <p style={{ fontSize: 12, color: "#4A5568" }}>Post-op complaint &middot; Crown prep &middot; Day 3 &middot; Mentioned &ldquo;lawyer&rdquo; to front desk</p>
+                  </div>
+                  {[
+                    { label: "Primary driver", value: "Control loss injury — not clinical failure", color: "#1A2B3C" },
+                    { label: "Risk level", value: "Moderate — no carrier contact required yet", color: "#B07D2E" },
+                    { label: "Triage", value: "Likely containable with direct outreach today", color: "#0E6B5E" },
+                  ].map((row) => (
+                    <div key={row.label} style={{ marginBottom: 12 }}>
+                      <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>{row.label}</p>
+                      <p style={{ fontSize: 13, color: row.color, fontWeight: 500 }}>{row.value}</p>
+                    </div>
+                  ))}
+                  <div style={{ background: "#FDF4E3", border: "0.5px solid #E8C87A", borderRadius: 8, padding: "12px 14px", marginTop: 16 }}>
+                    <p style={{ fontSize: 10, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Recommended first move</p>
+                    <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.65, marginBottom: 8 }}>Personal call from dentist today, not staff. Do not open with a clinical explanation.</p>
+                    <p style={{ fontSize: 12, color: "#4A5568", fontStyle: "italic", lineHeight: 1.65, filter: "blur(3.5px)", userSelect: "none" }}>
+                      &ldquo;Patricia, I wanted to call you myself. I heard you&apos;ve been uncomfortable and I want to understand what&apos;s going on from your perspective before anything else.&rdquo;
+                    </p>
+                    <p style={{ fontSize: 10, color: "#B07D2E", marginTop: 6 }}>Suggested opening line — full script delivered in report</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How it works */}
+            <div>
+              <p style={{ fontSize: 11, textTransform: "uppercase", color: "#4A5568", letterSpacing: "1px", marginBottom: 20, fontWeight: 500 }}>How it works</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {[
+                  { n: "01", title: "Describe the situation", body: "What happened clinically, what the patient said, how they said it, and any relevant history with your practice. Takes about two minutes." },
+                  { n: "02", title: "TensionDx maps the terrain", body: "The psychological driver behind the complaint is identified — control loss, unmet expectation, shame, fear of cost, or genuine clinical concern. Each requires a different response." },
+                  { n: "03", title: "De-escalation script delivered immediately", body: "A triage assessment, recommended first move, and specific opening language — calibrated to what this patient actually needs to feel heard." },
+                ].map((step) => (
+                  <div key={step.n} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
+                    <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 22, color: "#E2DDD5", lineHeight: 1, flexShrink: 0, width: 36 }}>{step.n}</span>
+                    <div>
+                      <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{step.title}</p>
+                      <p style={{ fontSize: 13, color: "#4A5568", fontWeight: 300, lineHeight: 1.7 }}>{step.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: "2rem", padding: "16px 20px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
+                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.7, marginBottom: 8 }}>
+                  <strong>$99/month</strong> add-on. Available on Solo and Group plans.
+                </p>
+                <a href="/signup" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500 }}>Request access to TensionDx →</a>
+              </div>
             </div>
           </div>
         </div>
