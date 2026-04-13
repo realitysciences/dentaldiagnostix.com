@@ -5,6 +5,8 @@ import { Resend } from "resend";
 import { buildReportEmail } from "@/lib/report-email";
 import type { Report, Patient, Practice } from "@/types/database";
 
+export const maxDuration = 60;
+
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
@@ -80,6 +82,25 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Send immediate "intake complete" alert — fires before report generation so dentist knows right away
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://dentaldiagnostix.com";
+  resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: "davidbensondds@gmail.com",
+    subject: `Intake complete: ${patient.name} — report generating`,
+    html: `
+      <div style="font-family:DM Sans,Arial,sans-serif;max-width:500px;">
+        <div style="background:#1A2B3C;padding:16px 24px;margin-bottom:0;">
+          <span style="font-family:Lora,Georgia,serif;font-size:16px;color:#fff;">DentalDiagnostix</span>
+        </div>
+        <div style="background:#fff;padding:28px 24px;border:1px solid #E2DDD5;border-top:none;">
+          <p style="margin:0 0 6px;font-size:15px;color:#1A2B3C;font-weight:500;">${patient.name} just completed their intake.</p>
+          <p style="margin:0 0 20px;font-size:13px;color:#4A5568;">Their behavioral terrain report is being generated now and will be ready in under a minute.</p>
+          <a href="${appUrl}/reports/${patient.id}" style="display:inline-block;padding:11px 22px;background:#0E6B5E;color:#fff;text-decoration:none;border-radius:7px;font-size:14px;font-weight:500;">View report</a>
+        </div>
+      </div>`,
+  }).catch((e: unknown) => console.error("Alert email error:", e));
+
   // Build conversation for Claude
   const conversationText = responses
     .map(
@@ -90,7 +111,7 @@ export async function POST(request: NextRequest) {
 
   // Generate report
   const aiResponse = await anthropic.messages.create({
-    model: "claude-sonnet-4-6",
+    model: "claude-sonnet-4-5",
     max_tokens: 2048,
     system: REPORT_SYSTEM_PROMPT,
     messages: [

@@ -15,6 +15,7 @@ export default function NewPatientForm({
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [appointmentDate, setAppointmentDate] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [intakeLink, setIntakeLink] = useState("");
@@ -28,7 +29,7 @@ export default function NewPatientForm({
     const res = await fetch("/api/patients/new", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, practiceId, practiceName, dentistName }),
+      body: JSON.stringify({ name, email, appointmentDate: appointmentDate || undefined, practiceId, practiceName, dentistName }),
     });
 
     const data = await res.json();
@@ -103,9 +104,13 @@ export default function NewPatientForm({
         <label style={labelStyle} htmlFor="name">Patient name</label>
         <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Jane Smith" required style={inputStyle} />
       </div>
-      <div style={{ marginBottom: "28px" }}>
+      <div style={{ marginBottom: "20px" }}>
         <label style={labelStyle} htmlFor="email">Patient email</label>
         <input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="jane@example.com" required style={inputStyle} />
+      </div>
+      <div style={{ marginBottom: "28px" }}>
+        <label style={labelStyle} htmlFor="appt">Appointment date <span style={{ fontWeight: 400, color: "#A0B0C0" }}>(optional)</span></label>
+        <input id="appt" type="date" value={appointmentDate} onChange={(e) => setAppointmentDate(e.target.value)} style={inputStyle} />
       </div>
 
       {error && (

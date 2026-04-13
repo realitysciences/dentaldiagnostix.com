@@ -6,8 +6,10 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 );
 
-export async function POST(request: NextRequest) {
-  const { email, password, practiceName, dentistName } = await request.json();
+export async function POST(_request: NextRequest) {
+  return NextResponse.json({ error: "New signups are not currently open. Request access at dentaldiagnostix.com." }, { status: 403 });
+  // eslint-disable-next-line no-unreachable
+  const { email, password, practiceName, dentistName } = await _request.json();
 
   if (!email || !password || !practiceName || !dentistName) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });

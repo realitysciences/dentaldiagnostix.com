@@ -32,11 +32,11 @@ export default function LandingPage() {
               </span>
               <a href="/login" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Sign in</a>
             </div>
-            <a href="#" style={{
+            <a href="/signup" style={{
               background: "#0E6B5E", color: "#fff",
               fontSize: 13, padding: "8px 20px", borderRadius: 6,
               textDecoration: "none", whiteSpace: "nowrap",
-            }}>Request demo</a>
+            }}>Request access</a>
           </div>
         </div>
       </nav>
@@ -317,7 +317,7 @@ export default function LandingPage() {
                   <span style={{ fontSize: 16, lineHeight: "20px", flexShrink: 0 }}>·</span>{f}
                 </p>
               ))}
-              <a href="#" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", background: "#fff", borderRadius: 8, color: "#0E6B5E", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Request demo</a>
+              <a href="/signup" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", background: "#fff", borderRadius: 8, color: "#0E6B5E", textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Request access</a>
             </div>
           </div>
         </div>

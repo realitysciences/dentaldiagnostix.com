@@ -3,6 +3,8 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import type { Report, Patient } from "@/types/database";
 import GenerateReportButton from "./GenerateReportButton";
+import LegalDocPanel from "./LegalDocPanel";
+import ShareButton from "./ShareButton";
 
 export default async function ReportPage({
   params,
@@ -73,7 +75,7 @@ export default async function ReportPage({
     );
   }
 
-  return <ReportView patient={patient as Patient} report={report as Report} practiceName={practice.practice_name} />;
+  return <ReportView patient={patient as Patient} report={report as Report} practiceName={practice.practice_name} reportId={report.id} />;
 }
 
 function ReportHeader({ practiceName }: { practiceName: string }) {
@@ -202,10 +204,12 @@ function ReportView({
   patient,
   report,
   practiceName,
+  reportId,
 }: {
   patient: Patient;
   report: Report;
   practiceName: string;
+  reportId: string;
 }) {
   const riskColor = (r: string) => {
     if (r === "High") return "#9B3B3B";
@@ -305,6 +309,15 @@ function ReportView({
           border="#0E6B5E"
         />
 
+        {/* Legal documentation panel — shown for Elevated or High risk */}
+        {(report.legal_risk === "Elevated" || report.legal_risk === "High") && (
+          <LegalDocPanel
+            patientId={patient.id}
+            reportId={report.id}
+            riskLevel={report.legal_risk}
+          />
+        )}
+
         {/* Dos and Donts */}
         <div
           style={{
@@ -390,7 +403,24 @@ function ReportView({
           </div>
         </div>
 
-        <div style={{ marginTop: "32px" }}>
+        <div style={{ marginTop: "32px", display: "flex", alignItems: "center", gap: "20px" }}>
+          <Link
+            href={`/reports/${patient.id}/print`}
+            target="_blank"
+            style={{
+              padding: "10px 22px",
+              background: "#1A2B3C",
+              color: "#fff",
+              borderRadius: "8px",
+              textDecoration: "none",
+              fontFamily: "DM Sans, Arial, sans-serif",
+              fontSize: "13px",
+              fontWeight: 500,
+            }}
+          >
+            Download PDF
+          </Link>
+          <ShareButton reportId={reportId} />
           <Link
             href="/dashboard"
             style={{

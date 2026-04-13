@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import LogOutcomeButton from "./LogOutcomeButton";
+import RemindButton from "./RemindButton";
+import PatientNoteButton from "./PatientNoteButton";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -81,12 +83,9 @@ export default async function DashboardPage() {
             </span>
           </Link>
           <nav style={{ display: "flex", gap: "20px" }}>
-            <Link href="/dashboard" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#7DD4C4", textDecoration: "none", fontWeight: 500 }}>
-              Patients
-            </Link>
-            <Link href="/dashboard/roi" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0", textDecoration: "none" }}>
-              ROI
-            </Link>
+            <Link href="/dashboard" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#7DD4C4", textDecoration: "none", fontWeight: 500 }}>Patients</Link>
+            <Link href="/dashboard/roi" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0", textDecoration: "none" }}>ROI</Link>
+            <Link href="/dashboard/settings" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0", textDecoration: "none" }}>Settings</Link>
           </nav>
         </div>
         <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0" }}>
@@ -128,21 +127,20 @@ export default async function DashboardPage() {
               {patients?.length !== 1 ? "s" : ""} sent
             </p>
           </div>
-          <Link
-            href="/patients/new"
-            style={{
-              background: "#0E6B5E",
-              color: "#fff",
-              padding: "11px 24px",
-              borderRadius: "8px",
-              textDecoration: "none",
-              fontFamily: "DM Sans, Arial, sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-            }}
-          >
-            Send new intake
-          </Link>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <Link
+              href="/patients/import"
+              style={{ background: "#fff", color: "#1A2B3C", padding: "11px 20px", borderRadius: "8px", textDecoration: "none", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", fontWeight: 500, border: "1px solid #E2DDD5" }}
+            >
+              Import CSV
+            </Link>
+            <Link
+              href="/patients/new"
+              style={{ background: "#0E6B5E", color: "#fff", padding: "11px 24px", borderRadius: "8px", textDecoration: "none", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "14px", fontWeight: 500 }}
+            >
+              Send new intake
+            </Link>
+          </div>
         </div>
 
         {/* Table */}
@@ -178,7 +176,7 @@ export default async function DashboardPage() {
             <table style={{ width: "100%", borderCollapse: "collapse" }}>
               <thead>
                 <tr style={{ borderBottom: "1px solid #E2DDD5" }}>
-                  {["Name", "Email", "Status", "Date sent", "Actions"].map((h) => (
+                  {["Name", "Email", "Status", "Appointment", "Actions"].map((h) => (
                     <th
                       key={h}
                       style={{
@@ -205,8 +203,13 @@ export default async function DashboardPage() {
                     email: string;
                     status: string;
                     created_at: string;
+                    appointment_date?: string;
+                    notes?: string;
                   }) => {
                     const s = statusLabel(p.status);
+                    const apptDays = p.appointment_date
+                      ? Math.round((new Date(p.appointment_date + "T12:00:00").getTime() - Date.now()) / 86400000)
+                      : null;
                     return (
                       <tr
                         key={p.id}
@@ -248,15 +251,24 @@ export default async function DashboardPage() {
                             {s.text}
                           </span>
                         </td>
-                        <td
-                          style={{
-                            padding: "14px 20px",
-                            fontFamily: "DM Sans, Arial, sans-serif",
-                            fontSize: "14px",
-                            color: "#4A5568",
-                          }}
-                        >
-                          {formatDate(p.created_at)}
+                        <td style={{ padding: "14px 20px" }}>
+                          {p.appointment_date ? (
+                            <div>
+                              <p style={{ margin: 0, fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#1A2B3C" }}>
+                                {formatDate(p.appointment_date)}
+                              </p>
+                              {apptDays !== null && (
+                                <span style={{
+                                  fontFamily: "DM Sans, Arial, sans-serif", fontSize: "11px", fontWeight: 500,
+                                  color: apptDays < 0 ? "#4A5568" : apptDays <= 2 ? "#9B3B3B" : apptDays <= 7 ? "#B07D2E" : "#0E6B5E",
+                                }}>
+                                  {apptDays < 0 ? `${Math.abs(apptDays)}d ago` : apptDays === 0 ? "Today" : `${apptDays}d away`}
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0" }}>—</span>
+                          )}
                         </td>
                         <td style={{ padding: "14px 20px" }}>
                           <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
@@ -283,6 +295,10 @@ export default async function DashboardPage() {
                                 hasOutcome={outcomePatientIds.has(p.id)}
                               />
                             )}
+                            {(p.status === "pending" || p.status === "in_progress") && (
+                              <RemindButton patientId={p.id} />
+                            )}
+                            <PatientNoteButton patientId={p.id} initialNote={p.notes} />
                           </div>
                         </td>
                       </tr>

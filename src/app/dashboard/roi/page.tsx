@@ -30,6 +30,11 @@ export default async function ROIDashboardPage() {
     .select("*")
     .eq("practice_id", practice.id);
 
+  const { data: reports } = await supabase
+    .from("dd_reports")
+    .select("avoidance_type, compliance_risk, legal_risk, hygiene_relationship")
+    .eq("practice_id", practice.id);
+
   const totalIntakes = patients?.length ?? 0;
   const totalCompleted = patients?.filter((p: { status: string }) => p.status === "complete").length ?? 0;
   const completionRate = totalIntakes > 0 ? Math.round((totalCompleted / totalIntakes) * 100) : 0;
@@ -51,6 +56,19 @@ export default async function ROIDashboardPage() {
       sum + (o.treatment_value_accepted ?? 0),
     0
   ) ?? 0;
+
+  // Signal distributions from reports
+  const countBy = <T extends Record<string, string>>(arr: T[], key: keyof T) =>
+    arr.reduce((acc: Record<string, number>, item) => {
+      const val = item[key];
+      acc[val] = (acc[val] ?? 0) + 1;
+      return acc;
+    }, {});
+
+  const avoidanceCounts = countBy(reports ?? [], "avoidance_type");
+  const complianceCounts = countBy(reports ?? [], "compliance_risk");
+  const legalCounts = countBy(reports ?? [], "legal_risk");
+  const totalReports = reports?.length ?? 0;
 
   // Build a map of patientId → outcome for the table
   const outcomeMap = new Map(
@@ -85,9 +103,8 @@ export default async function ROIDashboardPage() {
             <Link href="/dashboard" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0", textDecoration: "none" }}>
               Patients
             </Link>
-            <Link href="/dashboard/roi" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#7DD4C4", textDecoration: "none", fontWeight: 500 }}>
-              ROI
-            </Link>
+            <Link href="/dashboard/roi" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#7DD4C4", textDecoration: "none", fontWeight: 500 }}>ROI</Link>
+            <Link href="/dashboard/settings" style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0", textDecoration: "none" }}>Settings</Link>
           </nav>
         </div>
         <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "13px", color: "#A0B0C0" }}>
@@ -175,6 +192,35 @@ export default async function ROIDashboardPage() {
               <BarRow label="Full acceptance" count={fullAccept} total={withTreatment.length} color="#1A6B3C" />
               <BarRow label="Partial acceptance" count={partialAccept} total={withTreatment.length} color="#B07D2E" />
               <BarRow label="Declined" count={declined} total={withTreatment.length} color="#9B3B3B" />
+            </div>
+          </div>
+        )}
+
+        {/* Signal distribution */}
+        {totalReports > 0 && (
+          <div style={{ background: "#fff", border: "1px solid #E2DDD5", borderRadius: "10px", padding: "24px 28px", marginBottom: "24px" }}>
+            <p style={{ margin: "0 0 20px", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "#4A5568", fontWeight: 500 }}>
+              Signal distribution — {totalReports} report{totalReports !== 1 ? "s" : ""}
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "28px" }}>
+              <SignalGroup
+                title="Avoidance type"
+                counts={avoidanceCounts}
+                total={totalReports}
+                colors={{ "Shame-based": "#9B3B3B", "Fear-based": "#B07D2E", "Indifference": "#4A5568", "Circumstantial": "#0E6B5E", "Mixed": "#1A6B3C" }}
+              />
+              <SignalGroup
+                title="Compliance risk"
+                counts={complianceCounts}
+                total={totalReports}
+                colors={{ "Low": "#0E6B5E", "Moderate": "#B07D2E", "High": "#9B3B3B" }}
+              />
+              <SignalGroup
+                title="Legal risk"
+                counts={legalCounts}
+                total={totalReports}
+                colors={{ "Low": "#0E6B5E", "Elevated": "#B07D2E", "High": "#9B3B3B" }}
+              />
             </div>
           </div>
         )}
@@ -269,6 +315,31 @@ export default async function ROIDashboardPage() {
         )}
       </div>
     </main>
+  );
+}
+
+function SignalGroup({ title, counts, total, colors }: { title: string; counts: Record<string, number>; total: number; colors: Record<string, string> }) {
+  return (
+    <div>
+      <p style={{ margin: "0 0 12px", fontFamily: "DM Sans, Arial, sans-serif", fontSize: "11px", textTransform: "uppercase", letterSpacing: "1px", color: "#4A5568", fontWeight: 500 }}>{title}</p>
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+        {Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([label, count]) => {
+          const pct = Math.round((count / total) * 100);
+          const color = colors[label] ?? "#4A5568";
+          return (
+            <div key={label}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+                <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "12px", color: "#1A2B3C" }}>{label}</span>
+                <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: "12px", color: "#4A5568" }}>{count} · {pct}%</span>
+              </div>
+              <div style={{ height: "6px", background: "#F0EFEC", borderRadius: "3px" }}>
+                <div style={{ height: "100%", width: `${pct}%`, background: color, borderRadius: "3px" }} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 

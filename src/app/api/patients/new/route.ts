@@ -10,7 +10,7 @@ const supabase = createClient(
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
-  const { name, email, practiceId, practiceName, dentistName } =
+  const { name, email, appointmentDate, practiceId, practiceName, dentistName } =
     await request.json();
 
   if (!name || !email || !practiceId) {
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
   const { data: patient, error } = await supabase
     .from("dd_patients")
-    .insert({ name, email, practice_id: practiceId, status: "pending" })
+    .insert({ name, email, practice_id: practiceId, status: "pending", appointment_date: appointmentDate ?? null })
     .select()
     .single();
 

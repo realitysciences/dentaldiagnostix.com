@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 
+export const maxDuration = 30;
+
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 const SYSTEM_PROMPT = `You are analyzing a dental patient's intake response to determine if follow-up questions are needed. You will receive the current question, the patient's answer, and the conversation so far. Respond only with valid JSON in this exact format: { "triggers": string[], "followUpQuestions": string[] }
