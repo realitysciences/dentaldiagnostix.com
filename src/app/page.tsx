@@ -424,7 +424,10 @@ export default function LandingPage() {
       <footer style={{ background: "#F7F5F0", borderTop: "0.5px solid #E2DDD5", padding: "2rem 0" }}>
         <div className="lp-section lp-footer" style={{ maxWidth: 900, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: 0, paddingBottom: 0 }}>
           <span style={{ fontFamily: "Lora, Georgia, serif", fontSize: 14, color: "#4A5568" }}>DentalDiagnostix &middot; Spheronaut LLC</span>
-          <span style={{ fontSize: 11, color: "#4A5568" }}>Behavioral intake only. Not a clinical tool. &copy; 2026</span>
+          <span style={{ fontSize: 11, color: "#4A5568", display: "flex", alignItems: "center", gap: 16 }}>
+            <Link href="/privacy" style={{ color: "#4A5568", textDecoration: "none" }}>Privacy</Link>
+            <span>Behavioral intake only. Not a clinical tool. &copy; 2026</span>
+          </span>
         </div>
       </footer>
     </>
