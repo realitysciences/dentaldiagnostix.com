@@ -78,11 +78,11 @@ export default function LandingPage() {
             padding: "12px 28px", borderRadius: 8,
             textDecoration: "none", fontSize: 15, fontWeight: 500,
           }}>See a sample report</a>
-          <a href="#" style={{
+          <a href="/signup" style={{
             color: "#4A5568", fontSize: 15, fontWeight: 400,
             textDecoration: "none", borderBottom: "1px solid #4A5568",
             padding: "12px 4px",
-          }}>Request a demo</a>
+          }}>Request access</a>
         </div>
       </section>
 
@@ -189,32 +189,94 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* PATIENT INTAKE PREVIEW */}
+      {/* WHAT THE PATIENT EXPERIENCES */}
       <section className="lp-section" style={{ padding: "5rem 3rem", maxWidth: 900, margin: "0 auto" }}>
         <div className="lp-two-col lp-intake-gap" style={{ gap: "5rem", alignItems: "center" }}>
           <div>
             <p style={{ fontSize: 11, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>What the patient experiences</p>
-            <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.25 }}>8 questions. No checkboxes. Plain language.</h2>
-            <p style={{ fontSize: 14, color: "#4A5568", fontWeight: 300, lineHeight: 1.75 }}>
-              The intake takes about 8 minutes and arrives alongside your existing appointment confirmation. It does not ask about flossing frequency or last cleaning date. It asks about the real relationship a patient has with their mouth and listens to how they answer. Patients complete it at their own pace, on any device. Nothing about it feels clinical. That is the point.
+            <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", marginBottom: 18, lineHeight: 1.25 }}>A conversation, not a form.</h2>
+            <p style={{ fontSize: 14, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, marginBottom: 24 }}>
+              The intake takes about 8 minutes and arrives alongside your existing appointment confirmation. It does not ask about flossing frequency or last cleaning date. It listens for what&apos;s actually underneath — the real relationship a patient has with their mouth and with dentistry.
             </p>
-          </div>
-          <div style={{ background: "#fff", border: "0.5px solid #E2DDD5", borderRadius: 12, overflow: "hidden" }}>
-            <div style={{ background: "#F7F5F0", padding: "1rem 1.25rem", borderBottom: "0.5px solid #E2DDD5" }}>
-              <p style={{ fontSize: 13, fontWeight: 500, color: "#1A2B3C" }}>New patient intake &middot; Dr. Kim&apos;s practice</p>
-              <p style={{ fontSize: 11, color: "#4A5568", marginTop: 3 }}>Takes about 8 minutes &middot; No right or wrong answers</p>
+            <p style={{ fontSize: 14, color: "#4A5568", fontWeight: 300, lineHeight: 1.75, marginBottom: 32 }}>
+              Patients respond by voice or by typing, in their own words, without checkboxes or clinical framing. Nothing about it feels like a medical intake. That is intentional.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              {[
+                { label: "Covers", value: "Avoidance history · Past provider relationships · Treatment decision patterns · Emotional context" },
+                { label: "Format", value: "Voice or text · Any device · No login required · One question at a time" },
+                { label: "Time", value: "Approx. 8 minutes · Completion rate above 70% for new patients" },
+              ].map(item => (
+                <div key={item.label} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+                  <span style={{ fontFamily: "DM Sans, Arial, sans-serif", fontSize: 11, textTransform: "uppercase", letterSpacing: "1px", color: "#0E6B5E", fontWeight: 500, width: 60, flexShrink: 0, paddingTop: 2 }}>{item.label}</span>
+                  <span style={{ fontSize: 13, color: "#4A5568", lineHeight: 1.65 }}>{item.value}</span>
+                </div>
+              ))}
             </div>
-            {[
-              { num: "Question 3 of 8", q: "When you think about the last time you went to the dentist, what comes up for you?", a: "Honestly, embarrassment. It had been too long and I just kept putting it off. I felt like they were going to judge me." },
-              { num: "Question 5 of 8", q: "Is there anything you would want a dentist to know about you before you come in?", a: "Just that I am not someone who does not care. Life got in the way. I do care." },
-              { num: "Question 7 of 8", q: "If a dentist recommended treatment you were not expecting, how would you typically handle that?", a: "I would probably say yes and then need to think about the cost. I do not love bringing money up in the moment." },
-            ].map((item, i, arr) => (
-              <div key={i} style={{ padding: "1rem 1.25rem", borderBottom: i < arr.length - 1 ? "0.5px solid #E2DDD5" : "none" }}>
-                <p style={{ fontSize: 10, color: "#0E6B5E", fontWeight: 500, marginBottom: 5 }}>{item.num}</p>
-                <p style={{ fontSize: 13, color: "#1A2B3C", lineHeight: 1.5 }}>{item.q}</p>
-                <p style={{ fontSize: 12, color: "#4A5568", fontStyle: "italic", lineHeight: 1.6, marginTop: 8, paddingTop: 8, borderTop: "0.5px solid #E2DDD5" }}>{item.a}</p>
+          </div>
+
+          {/* Interface mockup — conveys the experience without revealing question content */}
+          <div style={{ background: "#fff", border: "0.5px solid #E2DDD5", borderRadius: 16, overflow: "hidden", boxShadow: "0 4px 24px rgba(26,43,60,0.07)" }}>
+            {/* Browser chrome */}
+            <div style={{ background: "#F7F5F0", padding: "10px 16px", borderBottom: "0.5px solid #E2DDD5", display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#E2DDD5", display: "inline-block" }} />
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#E2DDD5", display: "inline-block" }} />
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#E2DDD5", display: "inline-block" }} />
+              <span style={{ flex: 1, background: "#E2DDD5", borderRadius: 4, height: 18, marginLeft: 8, opacity: 0.5 }} />
+            </div>
+
+            {/* Practice header */}
+            <div style={{ background: "#1A2B3C", padding: "14px 20px" }}>
+              <p style={{ margin: 0, fontSize: 10, textTransform: "uppercase", letterSpacing: "1.5px", color: "#7DD4C4" }}>DentalDiagnostix</p>
+              <p style={{ margin: "3px 0 0", fontFamily: "Lora, Georgia, serif", fontSize: 14, color: "#fff", fontWeight: 400 }}>Pre-visit check-in &middot; Dr. Kim&apos;s Family Dental</p>
+            </div>
+
+            {/* Progress bar */}
+            <div style={{ padding: "16px 20px 0" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
+                <span style={{ fontSize: 10, color: "#0E6B5E", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 500 }}>Question 5 of 8</span>
+                <span style={{ fontSize: 10, color: "#A0B0C0" }}>About 4 minutes left</span>
               </div>
-            ))}
+              <div style={{ height: 4, background: "#F0EFEC", borderRadius: 2 }}>
+                <div style={{ height: "100%", width: "62%", background: "#0E6B5E", borderRadius: 2 }} />
+              </div>
+            </div>
+
+            {/* Question area — text replaced with decorative bars */}
+            <div style={{ padding: "20px 20px 16px" }}>
+              <div style={{ marginBottom: 16 }}>
+                <div style={{ height: 13, background: "#1A2B3C", borderRadius: 3, width: "88%", marginBottom: 8, opacity: 0.12 }} />
+                <div style={{ height: 13, background: "#1A2B3C", borderRadius: 3, width: "72%", opacity: 0.12 }} />
+              </div>
+
+              {/* Audio wave response area */}
+              <div style={{ background: "#F7F5F0", borderRadius: 10, padding: "16px 18px", border: "0.5px solid #E2DDD5" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+                  <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#0E6B5E", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span style={{ color: "#fff", fontSize: 12 }}>♪</span>
+                  </div>
+                  <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 2 }}>
+                    {[14, 22, 18, 28, 16, 24, 20, 32, 18, 26, 14, 20, 28, 16, 22].map((h, i) => (
+                      <div key={i} style={{ width: 3, height: h, background: i < 9 ? "#0E6B5E" : "#E2DDD5", borderRadius: 2, opacity: i < 9 ? 0.7 : 0.4 }} />
+                    ))}
+                  </div>
+                  <span style={{ fontSize: 11, color: "#4A5568", flexShrink: 0 }}>0:23</span>
+                </div>
+                <div style={{ height: 10, background: "#E2DDD5", borderRadius: 2, width: "90%", marginBottom: 6, opacity: 0.5 }} />
+                <div style={{ height: 10, background: "#E2DDD5", borderRadius: 2, width: "65%", opacity: 0.5 }} />
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div style={{ padding: "0 20px 20px", display: "flex", gap: 8 }}>
+              <div style={{ flex: 1, padding: "10px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
+                <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#9B3B3B", display: "inline-block" }} />
+                <span style={{ fontSize: 12, color: "#4A5568" }}>Tap to speak</span>
+              </div>
+              <div style={{ flex: 1, padding: "10px", background: "#0E6B5E", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ fontSize: 12, color: "#fff", fontWeight: 500 }}>Next →</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -306,7 +368,7 @@ export default function LandingPage() {
                   <span style={{ color: "#0E6B5E", fontSize: 16, lineHeight: "20px", flexShrink: 0 }}>·</span>{f}
                 </p>
               ))}
-              <a href="#" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 14 }}>Get started</a>
+              <a href="/signup" style={{ display: "block", marginTop: 24, padding: "11px", textAlign: "center", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 8, color: "#fff", textDecoration: "none", fontSize: 14 }}>Request access</a>
             </div>
             <div style={{ background: "#0E6B5E", border: "0.5px solid rgba(255,255,255,0.12)", borderRadius: 12, padding: "2rem" }}>
               <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.7)", letterSpacing: "1px", marginBottom: 16 }}>Group practice</p>
@@ -352,7 +414,7 @@ export default function LandingPage() {
         <p style={{ fontSize: 15, color: "rgba(255,255,255,0.75)", maxWidth: 480, margin: "0 auto 32px", lineHeight: 1.75 }}>
           Request a demo and we will walk you through a real sample report, built from an actual intake response. No slides. No pitch deck. Just the artifact.
         </p>
-        <a href="#" style={{ display: "inline-block", background: "#fff", color: "#0E6B5E", padding: "13px 32px", borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 500 }}>Request a demo</a>
+        <a href="/signup" style={{ display: "inline-block", background: "#fff", color: "#0E6B5E", padding: "13px 32px", borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 500 }}>Request access</a>
         <p style={{ marginTop: 20, fontSize: 12, color: "rgba(255,255,255,0.55)" }}>
           Or email directly: <a href="mailto:david@dentaldiagnostix.com" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "underline" }}>david@dentaldiagnostix.com</a>
         </p>
