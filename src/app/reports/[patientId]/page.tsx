@@ -88,9 +88,11 @@ function ReportHeader({ practiceName }: { practiceName: string }) {
       }}
     >
       <div>
-        <p style={{ margin: 0, fontFamily: "DM Sans, Arial, sans-serif", fontSize: "11px", textTransform: "uppercase", letterSpacing: "2px", color: "#0E6B5E" }}>
-          DentalDiagnostix
-        </p>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <p style={{ margin: 0, fontFamily: "DM Sans, Arial, sans-serif", fontSize: "11px", textTransform: "uppercase", letterSpacing: "2px", color: "#0E6B5E" }}>
+            DentalDiagnostix
+          </p>
+        </Link>
         <p style={{ margin: "2px 0 0", fontFamily: "Lora, Georgia, serif", fontSize: "15px", color: "#fff", fontWeight: 400 }}>
           Patient Behavioral Report
         </p>

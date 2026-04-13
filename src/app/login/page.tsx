@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LoginForm from "./LoginForm";
 
 export default function LoginPage() {
@@ -14,18 +15,20 @@ export default function LoginPage() {
     >
       <div style={{ width: "100%", maxWidth: 420 }}>
         <div style={{ textAlign: "center", marginBottom: "36px" }}>
-          <p
-            style={{
-              fontFamily: "DM Sans, Arial, sans-serif",
-              fontSize: "12px",
-              textTransform: "uppercase",
-              letterSpacing: "2px",
-              color: "#0E6B5E",
-              marginBottom: "8px",
-            }}
-          >
-            DentalDiagnostix
-          </p>
+          <Link href="/" style={{ textDecoration: "none" }}>
+            <p
+              style={{
+                fontFamily: "DM Sans, Arial, sans-serif",
+                fontSize: "12px",
+                textTransform: "uppercase",
+                letterSpacing: "2px",
+                color: "#0E6B5E",
+                marginBottom: "8px",
+              }}
+            >
+              DentalDiagnostix
+            </p>
+          </Link>
           <h1
             style={{
               fontFamily: "Lora, Georgia, serif",

@@ -66,16 +66,18 @@ export default async function DashboardPage() {
           justifyContent: "space-between",
         }}
       >
-        <span
-          style={{
-            fontFamily: "Lora, Georgia, serif",
-            fontSize: "18px",
-            color: "#fff",
-            letterSpacing: "0.3px",
-          }}
-        >
-          DentalDiagnostix
-        </span>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <span
+            style={{
+              fontFamily: "Lora, Georgia, serif",
+              fontSize: "18px",
+              color: "#fff",
+              letterSpacing: "0.3px",
+            }}
+          >
+            DentalDiagnostix
+          </span>
+        </Link>
         <span
           style={{
             fontFamily: "DM Sans, Arial, sans-serif",

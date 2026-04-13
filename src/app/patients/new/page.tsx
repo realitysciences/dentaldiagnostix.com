@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import NewPatientForm from "./NewPatientForm";
 
@@ -30,15 +31,17 @@ export default async function NewPatientPage() {
           justifyContent: "space-between",
         }}
       >
-        <span
-          style={{
-            fontFamily: "Lora, Georgia, serif",
-            fontSize: "18px",
-            color: "#fff",
-          }}
-        >
-          DentalDiagnostix
-        </span>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <span
+            style={{
+              fontFamily: "Lora, Georgia, serif",
+              fontSize: "18px",
+              color: "#fff",
+            }}
+          >
+            DentalDiagnostix
+          </span>
+        </Link>
         <a
           href="/dashboard"
           style={{
