@@ -229,10 +229,10 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 8, padding: "12px 14px", background: "#F7F5F0", borderRadius: 8, border: "0.5px solid #E2DDD5" }}>
-              <span style={{ color: "#0E6B5E", fontSize: 14, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>·</span>
-              <p style={{ fontSize: 12, color: "#4A5568", lineHeight: 1.65, margin: 0 }}>
-                <strong style={{ color: "#1A2B3C", fontWeight: 500 }}>Patients never see the DentalDiagnostix name.</strong> The intake arrives under your practice name and branding. To them, it is simply part of their appointment preparation.
+            <div style={{ borderLeft: "3px solid #0E6B5E", paddingLeft: 16, marginTop: 8 }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1A2B3C", marginBottom: 5 }}>Patients never see the DentalDiagnostix name.</p>
+              <p style={{ fontSize: 13, color: "#4A5568", lineHeight: 1.7, margin: 0 }}>
+                The intake arrives under your practice name and branding. To your patients, it is simply part of their appointment preparation — sent by you, on behalf of your practice. You get the credit for knowing them before they sit down.
               </p>
             </div>
           </div>
@@ -345,6 +345,7 @@ export default function LandingPage() {
               { title: "Not a tech company guessing at dentistry", body: "DentalDiagnostix was built by someone who has sat in the operatory, managed treatment resistance, and navigated difficult patients without any of this information." },
               { title: "The methodology exists outside dentistry", body: "The underlying behavioral terrain framework has been applied across hundreds of psychology sessions. DentalDiagnostix is a purpose-built vertical application of that methodology." },
               { title: "Not a clinical tool", body: "Behavioral intake only. No diagnoses, no treatment recommendations, no clinical liability. Just the context you never had before the patient sat down." },
+              { title: "Your name. Your brand. Your credit.", body: "Patients never see DentalDiagnostix. The intake arrives under your practice name. The insight lands as yours. You are the dentist who knew them before they sat down — because you are." },
             ].map((f) => (
               <div key={f.title} style={{ borderLeft: "2px solid #0E6B5E", paddingLeft: "1rem" }}>
                 <p style={{ fontSize: 14, fontWeight: 500, color: "#1A2B3C", marginBottom: 5 }}>{f.title}</p>
