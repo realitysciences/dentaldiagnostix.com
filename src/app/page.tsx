@@ -193,7 +193,7 @@ export default function LandingPage() {
               <div style={{ background: "#FBF0EF", borderRadius: 6, padding: "10px 13px" }}>
                 <p style={{ fontSize: 10, textTransform: "uppercase", color: "#9B3B3B", fontWeight: 500, letterSpacing: "0.8px", marginBottom: 10 }}>DON&apos;T</p>
                 {[
-                  "Ask why haven't you been in or comment on the state of her teeth.",
+                  "Ask why she has not been in, or comment on the state of her teeth.",
                   "Reference what she should have done or use language that assigns blame.",
                   "Skip documentation or rely on verbal-only consent for any recommendation.",
                 ].map((t, i) => (
