@@ -38,16 +38,16 @@ export default function LandingPage() {
                   <a href="#electivecases">Elective Case Identifier</a>
                 </div>
               </div>
-              <span style={{
-                display: "inline-flex", alignItems: "center", gap: 5,
-                background: "#E4F2F0", color: "#0E6B5E",
-                fontSize: 11, padding: "4px 10px", borderRadius: 20,
-              }}>
-                <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#0E6B5E", display: "inline-block" }} />
-                Built by a licensed dentist
-              </span>
               <a href="/login" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Sign in</a>
             </div>
+            <span style={{
+              display: "inline-flex", alignItems: "center", gap: 5,
+              background: "#E4F2F0", color: "#0E6B5E",
+              fontSize: 11, padding: "4px 10px", borderRadius: 20,
+            }}>
+              <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#0E6B5E", display: "inline-block" }} />
+              Built by a licensed dentist
+            </span>
             <a href="/signup" style={{
               background: "#0E6B5E", color: "#fff",
               fontSize: 13, padding: "8px 20px", borderRadius: 6,
@@ -156,11 +156,11 @@ export default function LandingPage() {
           <div className="lp-two-col" style={{ gap: "1.25rem", marginBottom: "1.25rem" }}>
             <div style={{ background: "#E4F2F0", borderLeft: "2px solid #0E6B5E", borderRadius: "0 6px 6px 0", padding: "12px 14px" }}>
               <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "0.8px", marginBottom: 7, fontWeight: 500 }}>Terrain summary</p>
-              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", }}>She stopped coming in because a dentist made her feel like a bad patient, not because she was afraid of the chair. She already knows her situation is not ideal and she is braced for you to say so. Do not. Walk in without any commentary on the gap or the state of her teeth and this appointment will go well.</p>
+              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", filter: "blur(4px)", userSelect: "none" }}>She stopped coming in because a dentist made her feel like a bad patient, not because she was afraid of the chair. She already knows her situation is not ideal and she is braced for you to say so. Do not. Walk in without any commentary on the gap or the state of her teeth and this appointment will go well.</p>
             </div>
             <div style={{ background: "#FDF4E3", borderLeft: "2px solid #B07D2E", borderRadius: "0 6px 6px 0", padding: "12px 14px" }}>
               <p style={{ fontSize: 10, textTransform: "uppercase", color: "#B07D2E", letterSpacing: "0.8px", marginBottom: 7, fontWeight: 500 }}>Compliance signal</p>
-              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", }}>History of agreeing to treatment plans and quietly defaulting on scheduling. Likely driven by cost and shame intersecting. Confirm the financial pathway before presenting the plan. She will not raise it herself.</p>
+              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", filter: "blur(4px)", userSelect: "none" }}>History of agreeing to treatment plans and quietly defaulting on scheduling. Likely driven by cost and shame intersecting. Confirm the financial pathway before presenting the plan. She will not raise it herself.</p>
             </div>
           </div>
 
@@ -168,11 +168,11 @@ export default function LandingPage() {
           <div className="lp-two-col" style={{ gap: "1.25rem", marginBottom: "1.25rem" }}>
             <div style={{ background: "#FBF0EF", borderLeft: "2px solid #9B3B3B", borderRadius: "0 6px 6px 0", padding: "12px 14px" }}>
               <p style={{ fontSize: 10, textTransform: "uppercase", color: "#9B3B3B", letterSpacing: "0.8px", marginBottom: 7, fontWeight: 500 }}>Legal risk flag</p>
-              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", }}>References a prior provider as having done something wrong. Has considered leaving a public review. Document all recommendations carefully. Obtain verbal and written acknowledgment at key decision points in the visit.</p>
+              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", filter: "blur(4px)", userSelect: "none" }}>References a prior provider as having done something wrong. Has considered leaving a public review. Document all recommendations carefully. Obtain verbal and written acknowledgment at key decision points in the visit.</p>
             </div>
             <div style={{ background: "#E4F2F0", borderLeft: "2px solid #0E6B5E", borderRadius: "0 6px 6px 0", padding: "12px 14px" }}>
               <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "0.8px", marginBottom: 7, fontWeight: 500 }}>Dentist history</p>
-              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", }}>Two prior dentists. Primary negative experience: told her teeth were a mess and felt lectured, then abandoned treatment mid-plan. Emergency visit 2 years ago with no follow-up on restorative recommendation. No current dental home.</p>
+              <p style={{ fontSize: 12.5, lineHeight: 1.65, color: "#1A2B3C", filter: "blur(4px)", userSelect: "none" }}>Two prior dentists. Primary negative experience: told her teeth were a mess and felt lectured, then abandoned treatment mid-plan. Emergency visit 2 years ago with no follow-up on restorative recommendation. No current dental home.</p>
             </div>
           </div>
 
@@ -187,7 +187,7 @@ export default function LandingPage() {
                   "Normalize long gaps between visits without making it a teaching moment.",
                   "Present the financial pathway before the treatment plan.",
                 ].map((t, i) => (
-                  <p key={i} style={{ fontSize: 12.5, color: "#1A2B3C", lineHeight: 1.6, marginBottom: i < 2 ? 8 : 0, paddingLeft: 12, borderLeft: "2px solid #0E6B5E", }}>{t}</p>
+                  <p key={i} style={{ fontSize: 12.5, color: "#1A2B3C", lineHeight: 1.6, marginBottom: i < 2 ? 8 : 0, paddingLeft: 12, borderLeft: "2px solid #0E6B5E", filter: "blur(3.5px)", userSelect: "none" }}>{t}</p>
                 ))}
               </div>
               <div style={{ background: "#FBF0EF", borderRadius: 6, padding: "10px 13px" }}>
@@ -197,7 +197,7 @@ export default function LandingPage() {
                   "Reference what she should have done or use language that assigns blame.",
                   "Skip documentation or rely on verbal-only consent for any recommendation.",
                 ].map((t, i) => (
-                  <p key={i} style={{ fontSize: 12.5, color: "#1A2B3C", lineHeight: 1.6, marginBottom: i < 2 ? 8 : 0, paddingLeft: 12, borderLeft: "2px solid #9B3B3B", }}>{t}</p>
+                  <p key={i} style={{ fontSize: 12.5, color: "#1A2B3C", lineHeight: 1.6, marginBottom: i < 2 ? 8 : 0, paddingLeft: 12, borderLeft: "2px solid #9B3B3B", filter: "blur(3.5px)", userSelect: "none" }}>{t}</p>
                 ))}
               </div>
             </div>
@@ -470,7 +470,7 @@ export default function LandingPage() {
                   ].map((row) => (
                     <div key={row.label} style={{ marginBottom: 12 }}>
                       <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>{row.label}</p>
-                      <p style={{ fontSize: 13, color: row.color, fontWeight: 500 }}>{row.value}</p>
+                      <p style={{ fontSize: 13, color: row.color, fontWeight: 500, filter: "blur(4px)", userSelect: "none" }}>{row.value}</p>
                     </div>
                   ))}
                   <div style={{ background: "#FDF4E3", border: "0.5px solid #E8C87A", borderRadius: 8, padding: "12px 14px", marginTop: 16 }}>
@@ -542,7 +542,7 @@ export default function LandingPage() {
                     <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Signals</p>
                     {["Rescheduled twice during intake window", "Vague on reason for gap from prior dentist", "Non-committal language throughout responses"].map((s) => (
                       <p key={s} style={{ fontSize: 13, color: "#4A5568", marginBottom: 5, display: "flex", gap: 8, alignItems: "flex-start" }}>
-                        <span style={{ color: "#E07070", flexShrink: 0 }}>·</span>{s}
+                        <span style={{ color: "#E07070", flexShrink: 0 }}>·</span><span style={{ filter: "blur(3.5px)", userSelect: "none" }}>{s}</span>
                       </p>
                     ))}
                   </div>
@@ -604,13 +604,13 @@ export default function LandingPage() {
                     <p style={{ fontSize: 12, color: "#4A5568" }}>$4,200 restorative plan to be presented</p>
                   </div>
                   {[
-                    { label: "Acceptance risk", value: "Moderate-high", color: "#B07D2E" },
-                    { label: "Driver", value: "Cost anxiety intersecting with shame. Will not raise money herself.", color: "#1A2B3C" },
-                    { label: "Recommended approach", value: "Present the financial pathway before the clinical plan.", color: "#0E6B5E" },
+                    { label: "Acceptance risk", value: "Moderate-high", color: "#B07D2E", blur: false },
+                    { label: "Driver", value: "Cost anxiety intersecting with shame. Will not raise money herself.", color: "#1A2B3C", blur: true },
+                    { label: "Recommended approach", value: "Present the financial pathway before the clinical plan.", color: "#0E6B5E", blur: true },
                   ].map((row) => (
                     <div key={row.label} style={{ marginBottom: 12 }}>
                       <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>{row.label}</p>
-                      <p style={{ fontSize: 13, color: row.color, fontWeight: 500 }}>{row.value}</p>
+                      <p style={{ fontSize: 13, color: row.color, fontWeight: 500, ...(row.blur ? { filter: "blur(4px)", userSelect: "none" } : {}) }}>{row.value}</p>
                     </div>
                   ))}
                   <div style={{ background: "#FDF4E3", border: "0.5px solid #E8C87A", borderRadius: 8, padding: "12px 14px", marginTop: 8 }}>
@@ -671,7 +671,7 @@ export default function LandingPage() {
                   </div>
                   <div style={{ marginBottom: 16 }}>
                     <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>Lapse driver</p>
-                    <p style={{ fontSize: 13, color: "#1A2B3C" }}>Felt judged after treatment was not completed. Embarrassed to return.</p>
+                    <p style={{ fontSize: 13, color: "#1A2B3C", filter: "blur(4px)", userSelect: "none" }}>Felt judged after treatment was not completed. Embarrassed to return.</p>
                   </div>
                   <div style={{ background: "#E4F2F0", border: "0.5px solid #A8D5CC", borderRadius: 8, padding: "12px 14px" }}>
                     <p style={{ fontSize: 10, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "0.8px", marginBottom: 8, fontWeight: 500 }}>Generated outreach (SMS/email)</p>
@@ -737,7 +737,7 @@ export default function LandingPage() {
                     <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 6, fontWeight: 500 }}>Signals</p>
                     {["Referenced prior negative provider experience in intake", "Language suggesting unmet expectations throughout visit", "Non-verbal disengagement noted at checkout"].map((s) => (
                       <p key={s} style={{ fontSize: 13, color: "#4A5568", marginBottom: 5, display: "flex", gap: 8, alignItems: "flex-start" }}>
-                        <span style={{ color: "#E07070", flexShrink: 0 }}>·</span>{s}
+                        <span style={{ color: "#E07070", flexShrink: 0 }}>·</span><span style={{ filter: "blur(3.5px)", userSelect: "none" }}>{s}</span>
                       </p>
                     ))}
                   </div>
@@ -796,12 +796,12 @@ export default function LandingPage() {
                     <p style={{ fontSize: 12, color: "#4A5568" }}>Patient since 2022 &middot; Next hygiene visit: May 8</p>
                   </div>
                   {[
-                    { label: "Elective readiness", value: "High", color: "#0E6B5E" },
-                    { label: "Signals", value: "Mentioned appearance in intake, high compliance history, no unresolved financial friction", color: "#1A2B3C" },
+                    { label: "Elective readiness", value: "High", color: "#0E6B5E", blur: false },
+                    { label: "Signals", value: "Mentioned appearance in intake, high compliance history, no unresolved financial friction", color: "#1A2B3C", blur: true },
                   ].map((row) => (
                     <div key={row.label} style={{ marginBottom: 12 }}>
                       <p style={{ fontSize: 10, textTransform: "uppercase", color: "#4A5568", letterSpacing: "0.8px", marginBottom: 4, fontWeight: 500 }}>{row.label}</p>
-                      <p style={{ fontSize: 13, color: row.color }}>{row.value}</p>
+                      <p style={{ fontSize: 13, color: row.color, ...(row.blur ? { filter: "blur(4px)", userSelect: "none" } : {}) }}>{row.value}</p>
                     </div>
                   ))}
                   <div style={{ background: "#E4F2F0", border: "0.5px solid #A8D5CC", borderRadius: 8, padding: "12px 14px", marginTop: 8 }}>
