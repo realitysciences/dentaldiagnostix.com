@@ -27,16 +27,23 @@ export default function ContactForm() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, practiceName, email, message }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: "db2c765e-ddd3-4ffe-8ecc-2b5e83716990",
+          name,
+          email,
+          subject: `Access request from ${name}${practiceName ? ` — ${practiceName}` : ""}`,
+          "Practice name": practiceName,
+          message: message || "(no message)",
+        }),
       });
       const data = await res.json();
       if (data.success) {
         setDone(true);
       } else {
-        setError(data.error || "Failed to send. Please try again.");
+        setError(data.message || "Failed to send. Please try again.");
       }
     } catch {
       setError("Network error. Please try again.");
