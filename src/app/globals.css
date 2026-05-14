@@ -89,4 +89,22 @@ h1, h2, h3, h4 {
   .lp-nav-inner         { padding-left: 1.25rem; padding-right: 1.25rem; }
   .lp-built-col         { gap: 3rem !important; }
   .lp-intake-gap        { gap: 2rem !important; }
+  .lp-blog-grid         { grid-template-columns: 1fr !important; }
 }
+
+/* Blog post body typography */
+.blog-body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #1A2B3C;
+}
+.blog-body p  { margin: 0 0 1.5rem; }
+.blog-body h2 {
+  font-family: "Lora", serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #1A2B3C;
+  margin: 2.5rem 0 1rem;
+}
+.blog-body strong { font-weight: 500; }

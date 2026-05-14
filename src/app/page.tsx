@@ -863,6 +863,49 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* BLOG */}
+      <section style={{ background: "#fff", borderTop: "0.5px solid #E2DDD5", padding: "5rem 0" }}>
+        <div className="lp-section" style={{ maxWidth: 900, margin: "0 auto", paddingTop: 0, paddingBottom: 0 }}>
+          <p style={{ fontSize: 11, textTransform: "uppercase", color: "#0E6B5E", letterSpacing: "1.5px", marginBottom: 14, fontWeight: 500 }}>From the practice</p>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2.5rem", flexWrap: "wrap", gap: "1rem" }}>
+            <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 34, fontWeight: 400, color: "#1A2B3C", margin: 0 }}>Behavioral insights for dentists.</h2>
+            <a href="/blog" style={{ fontSize: 13, color: "#0E6B5E", textDecoration: "none", fontWeight: 500, whiteSpace: "nowrap" }}>All posts →</a>
+          </div>
+          <div className="lp-blog-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.75rem" }}>
+            {[
+              {
+                slug: "why-patients-stop-coming-to-the-dentist",
+                date: "April 28, 2026",
+                readTime: "5 min",
+                title: "Why Patients Stop Coming to the Dentist (It Is Rarely About Fear)",
+                excerpt: "Avoidance gets coded as dental phobia. But when you actually listen to lapsed patients, the pattern is almost never fear. It is shame — and the two require completely different responses.",
+              },
+              {
+                slug: "what-dentists-say-that-ends-treatment-plans",
+                date: "May 2, 2026",
+                readTime: "4 min",
+                title: "The One Thing Dentists Say That Ends Treatment Plans Before They Start",
+                excerpt: "It does not sound unkind. It sounds like an honest clinical observation. But there is a class of comment that reliably ends the treatment relationship.",
+              },
+              {
+                slug: "treatment-resistance-is-not-a-patient-problem",
+                date: "May 6, 2026",
+                readTime: "6 min",
+                title: "Treatment Resistance Is Not a Patient Problem",
+                excerpt: "When patients decline treatment we blame their priorities or finances. But resistance almost always traces back somewhere specific — and it is almost never random.",
+              },
+            ].map((post) => (
+              <a key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+                <p style={{ fontSize: 11, color: "#4A5568", margin: 0 }}>{post.date} &middot; {post.readTime} read</p>
+                <p style={{ fontFamily: "Lora, Georgia, serif", fontSize: 17, color: "#1A2B3C", lineHeight: 1.4, margin: 0, fontWeight: 400 }}>{post.title}</p>
+                <p style={{ fontSize: 13, color: "#4A5568", lineHeight: 1.7, margin: 0, fontWeight: 300 }}>{post.excerpt}</p>
+                <span style={{ fontSize: 13, color: "#0E6B5E", fontWeight: 500, marginTop: 4 }}>Read →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section style={{ background: "#0E6B5E", padding: "5rem 1.25rem", textAlign: "center" }}>
         <h2 style={{ fontFamily: "Lora, Georgia, serif", fontSize: 36, fontWeight: 400, color: "#fff", marginBottom: 16, lineHeight: 1.25 }}>See your first report before you commit.</h2>
