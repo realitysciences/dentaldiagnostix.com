@@ -874,25 +874,25 @@ export default function LandingPage() {
           <div className="lp-blog-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.75rem" }}>
             {[
               {
-                slug: "why-patients-stop-coming-to-the-dentist",
-                date: "April 28, 2026",
+                slug: "first-60-seconds-patient-bad-dentist-history",
+                date: "May 15, 2026",
                 readTime: "5 min",
-                title: "Why Patients Stop Coming to the Dentist (It Is Rarely About Fear)",
-                excerpt: "Avoidance gets coded as dental phobia. But when you actually listen to lapsed patients, the pattern is almost never fear. It is shame — and the two require completely different responses.",
+                title: "What to Do in the First 60 Seconds With a Patient Who Has a Bad Dentist History",
+                excerpt: "The patient with a bad dentist history is not waiting to see how good you are. They decided before they arrived whether this appointment is going to be different. The first 60 seconds is not an introduction. It is a verdict.",
               },
               {
-                slug: "what-dentists-say-that-ends-treatment-plans",
-                date: "May 2, 2026",
+                slug: "patient-says-yes-and-disappears",
+                date: "May 15, 2026",
+                readTime: "5 min",
+                title: "The Patient Who Says Yes and Disappears",
+                excerpt: "They nodded through the whole treatment presentation. They took the printed plan. They said they would call to schedule. And then nothing. This is not about finances or priorities.",
+              },
+              {
+                slug: "what-patients-mean-fine-with-needles",
+                date: "May 15, 2026",
                 readTime: "4 min",
-                title: "The One Thing Dentists Say That Ends Treatment Plans Before They Start",
-                excerpt: "It does not sound unkind. It sounds like an honest clinical observation. But there is a class of comment that reliably ends the treatment relationship.",
-              },
-              {
-                slug: "treatment-resistance-is-not-a-patient-problem",
-                date: "May 6, 2026",
-                readTime: "6 min",
-                title: "Treatment Resistance Is Not a Patient Problem",
-                excerpt: "When patients decline treatment we blame their priorities or finances. But resistance almost always traces back somewhere specific — and it is almost never random.",
+                title: "What Patients Mean When They Say They Are Fine With Needles",
+                excerpt: "Patients who are actually fine with needles do not think to mention it. The ones who mention it are doing something else entirely, and it is worth understanding what.",
               },
             ].map((post) => (
               <a key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: 10 }}>
