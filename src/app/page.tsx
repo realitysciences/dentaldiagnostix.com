@@ -38,6 +38,7 @@ export default function LandingPage() {
                   <a href="#electivecases">Elective Case Identifier</a>
                 </div>
               </div>
+              <a href="/blog" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Blog</a>
               <a href="/login" style={{ fontSize: 13, color: "#4A5568", textDecoration: "none" }}>Sign in</a>
             </div>
             <span style={{
