@@ -28,6 +28,7 @@ const moduleRows = [
         badgeColor: AMBER,
         badgeBg: "#FDF4E3",
         body: "Flags patients who are likely to miss or avoid the appointment so your team can intervene early and protect your schedule.",
+        href: "/modules/noshowpredictor",
       },
       {
         icon: "💎",
@@ -36,6 +37,7 @@ const moduleRows = [
         badgeColor: GREEN,
         badgeBg: "#F0FDF4",
         body: "Surfaces patients who may be open to higher-value elective treatment based on motivation, language, and readiness.",
+        href: "/modules",
       },
     ],
   },
@@ -50,6 +52,7 @@ const moduleRows = [
         badgeColor: "#1D4ED8",
         badgeBg: "#EFF6FF",
         body: "Helps you present treatment in the order the patient can actually hear so acceptance goes up and pushback goes down.",
+        href: "/modules",
       },
       {
         icon: "🛡️",
@@ -58,6 +61,7 @@ const moduleRows = [
         badgeColor: RED,
         badgeBg: "#FBF0EF",
         body: "Detects frustration, legal threats, and trust rupture early so you can turn a difficult moment into a productive conversation.",
+        href: "/modules/tensiondx",
       },
     ],
   },
@@ -72,6 +76,7 @@ const moduleRows = [
         badgeColor: "#C2410C",
         badgeBg: "#FFF7ED",
         body: "Identifies patients who may leave upset publicly so you can resolve issues privately and protect your online reputation.",
+        href: "/modules",
       },
       {
         icon: "🔄",
@@ -80,6 +85,7 @@ const moduleRows = [
         badgeColor: P,
         badgeBg: PL,
         body: "Re-engages patients who disappeared without making them feel judged so they return with less shame and more trust.",
+        href: "/modules",
       },
     ],
   },
@@ -214,7 +220,7 @@ export default function ModulesPage() {
                       </span>
                     </div>
                     <p style={{ fontSize: 13, color: MUTED, fontWeight: 300, lineHeight: 1.7, marginBottom: 14 }}>{mod.body}</p>
-                    <Link href="/modules/tensiondx" style={{ fontSize: 13, color: P, fontWeight: 600, textDecoration: "none" }}>
+                    <Link href={mod.href} style={{ fontSize: 13, color: P, fontWeight: 600, textDecoration: "none" }}>
                       Learn more &rarr;
                     </Link>
                   </div>
