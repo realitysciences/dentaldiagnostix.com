@@ -21,35 +21,14 @@ export default function LandingPage() {
             <span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P, verticalAlign: "super", lineHeight: 0, marginLeft: 1 }}>&trade;</sup>
           </a>
-          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-            <div className="lp-nav-links">
-              <a href="#how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</a>
-              <a href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</a>
-              <a href="#pricing" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Pricing</a>
-              <div className="lp-tools-dropdown" style={{ cursor: "default" }}>
-                <span style={{ fontSize: 13, color: MUTED, display: "flex", alignItems: "center", gap: 4 }}>
-                  Tools <span style={{ fontSize: 9, opacity: 0.5 }}>▾</span>
-                </span>
-                <div className="lp-tools-menu">
-                  <div className="lp-tools-menu-label">Add-on modules</div>
-                  <a href="#tensiondx">TensionDx — Conflict triage</a>
-                  <a href="#noshowpredictor">No-Show Predictor</a>
-                  <a href="#treatmentcoach">Treatment Acceptance Coach</a>
-                  <a href="#lapsedpatients">Lapsed Patient Reactivation</a>
-                  <a href="#reviewwarning">Negative Review Warning</a>
-                  <a href="#electivecases">Elective Case Identifier</a>
-                </div>
-              </div>
-              <a href="/blog" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Blog</a>
-              <a href="/login" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sign in</a>
-            </div>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 5, background: PL, color: P, fontSize: 11, padding: "4px 10px", borderRadius: 20 }}>
-              <span style={{ width: 5, height: 5, borderRadius: "50%", background: P, display: "inline-block" }} />
-              Built by a licensed dentist
-            </span>
-            <a href="/signup" style={{ background: P, color: "#fff", fontSize: 13, fontWeight: 600, padding: "9px 20px", borderRadius: 7, textDecoration: "none", whiteSpace: "nowrap" }}>
-              Request Early Access
-            </a>
+          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+            <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
+            <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
+            <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
+            <Link href="/modules" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Modules</Link>
+            <Link href="/for-practices" style={{ background: P, color: "#fff", fontSize: 13, fontWeight: 600, padding: "9px 20px", borderRadius: 7, textDecoration: "none", whiteSpace: "nowrap" }}>
+              Request Early Access &rarr;
+            </Link>
           </div>
         </div>
       </nav>

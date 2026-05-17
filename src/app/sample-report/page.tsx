@@ -27,11 +27,12 @@ export default function SampleReportPage() {
             <span style={{ fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P, verticalAlign: "super", lineHeight: 0, marginLeft: 1 }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-            <Link href="/#how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
+          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+            <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: P, textDecoration: "none", fontWeight: 600, borderBottom: `2px solid ${P}`, paddingBottom: 2 }}>Sample report</Link>
-            <Link href="/#pricing" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
-            <Link href="/signup" style={{ background: P, color: "#fff", fontSize: 13, fontWeight: 600, padding: "9px 20px", borderRadius: 7, textDecoration: "none" }}>Request Access</Link>
+            <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
+            <Link href="/modules" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Modules</Link>
+            <Link href="/for-practices" style={{ background: P, color: "#fff", fontSize: 13, fontWeight: 600, padding: "9px 20px", borderRadius: 7, textDecoration: "none" }}>Request Early Access &rarr;</Link>
           </div>
         </div>
       </nav>
