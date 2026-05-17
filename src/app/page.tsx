@@ -24,7 +24,7 @@ export default function LandingPage() {
           <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
             <div className="lp-nav-links">
               <a href="#how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</a>
-              <a href="#sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</a>
+              <a href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</a>
               <a href="#pricing" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Pricing</a>
               <div className="lp-tools-dropdown" style={{ cursor: "default" }}>
                 <span style={{ fontSize: 13, color: MUTED, display: "flex", alignItems: "center", gap: 4 }}>
