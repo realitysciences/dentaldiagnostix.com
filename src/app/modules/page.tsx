@@ -37,7 +37,7 @@ const moduleRows = [
         badgeColor: GREEN,
         badgeBg: "#F0FDF4",
         body: "Surfaces patients who may be open to higher-value elective treatment based on motivation, language, and readiness.",
-        href: "/modules",
+        href: "/modules/electivecaseidentifier",
       },
     ],
   },
@@ -52,7 +52,7 @@ const moduleRows = [
         badgeColor: "#1D4ED8",
         badgeBg: "#EFF6FF",
         body: "Helps you present treatment in the order the patient can actually hear so acceptance goes up and pushback goes down.",
-        href: "/modules",
+        href: "/modules/treatmentacceptancecoach",
       },
       {
         icon: "🛡️",
@@ -76,7 +76,7 @@ const moduleRows = [
         badgeColor: "#C2410C",
         badgeBg: "#FFF7ED",
         body: "Identifies patients who may leave upset publicly so you can resolve issues privately and protect your online reputation.",
-        href: "/modules",
+        href: "/modules/negativereviewwarning",
       },
       {
         icon: "🔄",
@@ -85,7 +85,7 @@ const moduleRows = [
         badgeColor: P,
         badgeBg: PL,
         body: "Re-engages patients who disappeared without making them feel judged so they return with less shame and more trust.",
-        href: "/modules",
+        href: "/modules/lapsedpatientreactivation",
       },
     ],
   },
@@ -109,6 +109,7 @@ export default function ModulesPage() {
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
+            <Link href="/blog" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Blog</Link>
             <Link href="/modules" style={{ fontSize: 13, color: P, textDecoration: "none", fontWeight: 600, borderBottom: `2px solid ${P}`, paddingBottom: 2 }}>Modules</Link>
             <Link href="/for-practices" style={{ background: P, color: "#fff", fontSize: 13, fontWeight: 600, padding: "9px 20px", borderRadius: 7, textDecoration: "none" }}>Request Early Access &rarr;</Link>
           </div>

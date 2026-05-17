@@ -5,7 +5,23 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/signup", "/login", "/privacy"],
+        allow: [
+          "/",
+          "/how-it-works",
+          "/sample-report",
+          "/for-practices",
+          "/modules",
+          "/modules/tensiondx",
+          "/modules/noshowpredictor",
+          "/modules/treatmentacceptancecoach",
+          "/modules/electivecaseidentifier",
+          "/modules/negativereviewwarning",
+          "/modules/lapsedpatientreactivation",
+          "/blog",
+          "/signup",
+          "/login",
+          "/privacy",
+        ],
         disallow: [
           "/dashboard",
           "/patients/",

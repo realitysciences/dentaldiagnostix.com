@@ -13,25 +13,26 @@ const GREEN = "#15803D";
 const GL = "#F0FDF4";
 
 export const metadata = {
-  title: "No-Show Predictor™ — DentalDiagnostix",
-  description: "Predict the patients most likely to disappear before the chair is empty. No-Show Predictor reads pre-visit behavior, language, hesitation, and commitment signals.",
+  title: "Lapsed Patient Reactivation™ — DentalDiagnostix",
+  description:
+    "Bring back lapsed patients without making them feel judged. Lapsed Patient Reactivation reads departure signals to lower the re-entry barrier.",
 };
 
 const mistakeSteps = [
-  { icon: "👥", label: "Team assumes patient is coming." },
-  { icon: "❓", label: "Patient is uncertain or losing interest." },
-  { icon: "👁️", label: "No one intervenes in time." },
-  { icon: "🪑", label: "Chair sits empty. Time and production are lost." },
+  { icon: "📨", label: "Generic recall message sent." },
+  { icon: "😳", label: "Patient feels guilty and ignores it." },
+  { icon: "🔕", label: "Team does not follow up differently." },
+  { icon: "👻", label: "Patient stays gone." },
 ];
 
 const betterSteps = [
-  { icon: "🚩", label: "Risk is flagged early." },
-  { icon: "📞", label: "Team confirms gently and personally." },
-  { icon: "💬", label: "Hidden concern surfaces and can be solved." },
-  { icon: "📅", label: "Appointment is saved—or released early for someone who's ready." },
+  { icon: "🔍", label: "Barrier is identified before outreach." },
+  { icon: "✉️", label: "Message is reframed around welcome, not guilt." },
+  { icon: "😌", label: "Patient feels safe returning." },
+  { icon: "💚", label: "Long-term relationship is recovered." },
 ];
 
-export default function NoShowPredictorPage() {
+export default function LapsedPatientReactivationPage() {
   return (
     <>
       {/* NAV */}
@@ -61,7 +62,7 @@ export default function NoShowPredictorPage() {
         <p style={{ fontSize: 12, color: MUTED }}>
           <Link href="/modules" style={{ color: MUTED, textDecoration: "none" }}>Modules</Link>
           <span style={{ margin: "0 6px" }}>›</span>
-          <span style={{ color: TEXT, fontWeight: 500 }}>No-Show Predictor&trade;</span>
+          <span style={{ color: TEXT, fontWeight: 500 }}>Lapsed Patient Reactivation&trade;</span>
         </p>
       </div>
 
@@ -70,21 +71,21 @@ export default function NoShowPredictorPage() {
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "flex-start" }}>
           {/* Left */}
           <div>
-            <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#FDF4E3", border: `1px solid #F3DFA5`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>
-              📅
+            <div style={{ width: 56, height: 56, borderRadius: "50%", background: PL, border: `1px solid ${PB}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>
+              🔄
             </div>
-            <p style={{ fontSize: 22, fontWeight: 700, color: P, marginBottom: 8 }}>No-Show Predictor&trade;</p>
+            <p style={{ fontSize: 22, fontWeight: 700, color: P, marginBottom: 8 }}>Lapsed Patient Reactivation&trade;</p>
             <h1 style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
-              Predict the patients most likely to disappear before the chair is empty.
+              Bring back the patient who disappeared, without making them feel judged.
             </h1>
             <div style={{ width: 44, height: 4, background: P, borderRadius: 2, marginBottom: 24 }} />
             <p style={{ fontSize: 15, color: MUTED, fontWeight: 300, lineHeight: 1.75, marginBottom: 32 }}>
-              No-Show Predictor&trade; reads pre-visit behavior, language, hesitation, and commitment signals so your team can intervene before the appointment is lost.
+              Lapsed Patient Reactivation&trade; reads the original departure signals to understand why the patient stopped coming, then gives your team the opening that removes shame and lowers the re-entry barrier.
             </p>
             <div style={{ background: PL, border: `1px solid ${PB}`, borderRadius: 10, padding: "16px 20px", display: "flex", gap: 12, alignItems: "flex-start" }}>
-              <span style={{ fontSize: 20, flexShrink: 0 }}>🪑</span>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>🔄</span>
               <p style={{ fontSize: 13, fontStyle: "italic", color: DARK, lineHeight: 1.7 }}>
-                Every empty chair has a story. We help you see the warning signs&mdash;early.
+                Most lapsed patients are not gone. They are waiting for a reason to come back that does not feel like an accusation.
               </p>
             </div>
           </div>
@@ -92,65 +93,63 @@ export default function NoShowPredictorPage() {
           {/* Right — Sample Brief Card */}
           <div style={{ background: "#fff", border: `1px solid ${BORDER}`, borderRadius: 14, overflow: "hidden", boxShadow: "0 8px 40px rgba(109,40,217,0.1)" }}>
             <div style={{ background: DARK, padding: "12px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontSize: 9, textTransform: "uppercase", letterSpacing: 1, color: "rgba(255,255,255,0.5)" }}>Sample No-Show Predictor&trade; Brief</span>
+              <span style={{ fontSize: 9, textTransform: "uppercase", letterSpacing: 1, color: "rgba(255,255,255,0.5)" }}>Sample Lapsed Patient Reactivation&trade; Brief</span>
               <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)" }}>Generated May 12, 2025</span>
             </div>
             <div style={{ padding: "20px 22px" }}>
-              {/* Patient info rows */}
               {[
-                { label: "Patient", value: "James R., 44" },
-                { label: "Visit", value: "New patient exam" },
-                { label: "Appointment", value: "Thursday, May 16, 2025  •  2:00 PM" },
+                { label: "Patient", value: "Thomas R., 47" },
+                { label: "Last visit", value: "26 months ago" },
               ].map((row) => (
                 <div key={row.label} style={{ display: "flex", gap: 16, marginBottom: 12, paddingBottom: 12, borderBottom: `1px solid ${BORDER}` }}>
-                  <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 90, flexShrink: 0, paddingTop: 2 }}>{row.label}</p>
+                  <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 120, flexShrink: 0, paddingTop: 2 }}>{row.label}</p>
                   <p style={{ fontSize: 13, color: TEXT, lineHeight: 1.6 }}>{row.value}</p>
                 </div>
               ))}
 
-              {/* Risk level */}
+              {/* Reactivation readiness */}
               <div style={{ display: "flex", gap: 16, marginBottom: 12, paddingBottom: 12, borderBottom: `1px solid ${BORDER}`, alignItems: "center" }}>
-                <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 90, flexShrink: 0 }}>Risk level</p>
+                <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 120, flexShrink: 0 }}>Reactivation readiness</p>
                 <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 12 }}>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: RED, flexShrink: 0 }}>HIGH</p>
+                  <p style={{ fontSize: 13, fontWeight: 700, color: AMBER, flexShrink: 0 }}>Moderate</p>
                   <div style={{ flex: 1, height: 6, background: "#F3F4F6", borderRadius: 3 }}>
-                    <div style={{ height: "100%", width: "90%", background: RED, borderRadius: 3 }} />
+                    <div style={{ height: "100%", width: "55%", background: AMBER, borderRadius: 3 }} />
                   </div>
                 </div>
               </div>
 
-              {/* Primary signal */}
+              {/* Primary barrier */}
               <div style={{ display: "flex", gap: 16, marginBottom: 12, paddingBottom: 12, borderBottom: `1px solid ${BORDER}` }}>
-                <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 90, flexShrink: 0, paddingTop: 2 }}>Primary signal</p>
-                <p style={{ fontSize: 13, color: TEXT, lineHeight: 1.6 }}>Low commitment language</p>
+                <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 120, flexShrink: 0, paddingTop: 2 }}>Primary barrier</p>
+                <p style={{ fontSize: 13, color: TEXT, lineHeight: 1.6 }}>Cost-avoidance combined with embarrassment about the gap</p>
               </div>
 
               {/* Secondary signals */}
               <div style={{ display: "flex", gap: 16, marginBottom: 16, paddingBottom: 16, borderBottom: `1px solid ${BORDER}` }}>
-                <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 90, flexShrink: 0, paddingTop: 2 }}>Secondary signals</p>
+                <p style={{ fontSize: 10, textTransform: "uppercase", color: MUTED, letterSpacing: 0.8, fontWeight: 600, width: 120, flexShrink: 0, paddingTop: 2 }}>Secondary signals</p>
                 <div>
-                  {["Delayed intake completion", "Vague reason for visit", "Prior cancellation pattern"].map((s) => (
+                  {["Skipped recall reminders", "Had incomplete treatment", "Prior billing friction"].map((s) => (
                     <p key={s} style={{ fontSize: 13, color: TEXT, lineHeight: 1.7 }}>• {s}</p>
                   ))}
                 </div>
               </div>
 
-              {/* Recommended action */}
+              {/* Recommended approach */}
               <div style={{ borderLeft: `3px solid ${GREEN}`, paddingLeft: 12, marginBottom: 12, paddingTop: 4, paddingBottom: 4 }}>
-                <p style={{ fontSize: 10, textTransform: "uppercase", color: GREEN, letterSpacing: 0.8, fontWeight: 600, marginBottom: 4 }}>Recommended action</p>
-                <p style={{ fontSize: 13, color: TEXT, lineHeight: 1.65 }}>Same-day confirmation call from staff.</p>
+                <p style={{ fontSize: 10, textTransform: "uppercase", color: GREEN, letterSpacing: 0.8, fontWeight: 600, marginBottom: 4 }}>Recommended approach</p>
+                <p style={{ fontSize: 13, color: TEXT, lineHeight: 1.65 }}>Reframe the gap. Lead with welcome, not guilt.</p>
               </div>
 
               {/* Suggested line */}
               <div style={{ borderLeft: `3px solid ${P}`, paddingLeft: 12, marginBottom: 14, paddingTop: 4, paddingBottom: 4 }}>
                 <p style={{ fontSize: 10, textTransform: "uppercase", color: P, letterSpacing: 0.8, fontWeight: 600, marginBottom: 4 }}>Suggested line</p>
                 <p style={{ fontSize: 13, color: TEXT, fontStyle: "italic", lineHeight: 1.7 }}>
-                  &ldquo;Hi James, we&rsquo;re just confirming your visit for Thursday at 2:00. We want to make sure this still works for you and that there&rsquo;s nothing we should know before you come in.&rdquo;
+                  &ldquo;Thomas, we are so glad you reached out. A lot of people wait longer than they planned, and we are just here to help you get back on track, no questions asked, no judgment at all.&rdquo;
                 </p>
               </div>
 
               <p style={{ fontSize: 11, color: MUTED, lineHeight: 1.6 }}>
-                🔒 Full No-Show Predictor&trade; briefs include additional behavioral insights and timing guidance for your team.
+                🔒 Full Lapsed Patient Reactivation&trade; briefs include barrier analysis, messaging guidance, and timing recommendations.
               </p>
             </div>
           </div>
@@ -166,16 +165,16 @@ export default function NoShowPredictorPage() {
               <span style={{ fontSize: 20 }}>🔍</span>
               <p style={{ fontSize: 16, fontWeight: 700, color: GREEN }}>What it detects</p>
             </div>
-            <p style={{ fontSize: 12, color: MUTED, fontWeight: 300, lineHeight: 1.65, marginBottom: 16 }}>Behavioral and engagement signals that indicate risk of no-show or late cancel.</p>
+            <p style={{ fontSize: 12, color: MUTED, fontWeight: 300, lineHeight: 1.65, marginBottom: 16 }}>Departure signals and re-entry barriers that explain why a patient stopped coming.</p>
             {[
-              "Low commitment language",
-              "Repeated rescheduling",
-              "Vague motivation or unclear priority",
-              "Avoidance patterns",
-              "Cost anxiety or uncertainty",
-              "Prior trust friction",
-              "Delayed intake completion",
-              "Short or missing confirmation responses",
+              "Shame or embarrassment about the gap",
+              "Prior cost or billing friction",
+              "Incomplete treatment anxiety",
+              "Fear of being lectured",
+              "Low engagement before lapsing",
+              "Recall avoidance patterns",
+              "Life disruption signals",
+              "Appointment hesitation language",
             ].map((item) => (
               <div key={item} style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "flex-start" }}>
                 <span style={{ color: GREEN, flexShrink: 0, lineHeight: 1.5, fontWeight: 700 }}>✓</span>
@@ -190,15 +189,15 @@ export default function NoShowPredictorPage() {
               <span style={{ fontSize: 20 }}>🛡️</span>
               <p style={{ fontSize: 16, fontWeight: 700, color: "#1D4ED8" }}>What it helps prevent</p>
             </div>
-            <p style={{ fontSize: 12, color: MUTED, fontWeight: 300, lineHeight: 1.65, marginBottom: 16 }}>Protects your schedule, your team, and your patients.</p>
+            <p style={{ fontSize: 12, color: MUTED, fontWeight: 300, lineHeight: 1.65, marginBottom: 16 }}>Protects long-term patient relationships and practice growth.</p>
             {[
-              "Empty chair time",
-              "Last-minute cancellations",
-              "Schedule disruption",
-              "Staff guessing and chasing",
-              "Lost new patient opportunities",
-              "Patients quietly disappearing",
-              "Overbooked days due to uncertainty",
+              "Permanent patient loss",
+              "Re-engagement that triggers shame",
+              "Generic recall messages that go ignored",
+              "Staff not knowing how to open the call",
+              "Patients who want to return but cannot ask",
+              "Lost long-term patient relationships",
+              "Avoidable attrition",
             ].map((item) => (
               <div key={item} style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "flex-start" }}>
                 <span style={{ color: "#1D4ED8", flexShrink: 0, lineHeight: 1.5, fontWeight: 700 }}>✓</span>
@@ -213,14 +212,15 @@ export default function NoShowPredictorPage() {
               <span style={{ fontSize: 20 }}>✕</span>
               <p style={{ fontSize: 16, fontWeight: 700, color: RED }}>What it is not</p>
             </div>
-            <p style={{ fontSize: 12, color: MUTED, fontWeight: 300, lineHeight: 1.65, marginBottom: 16 }}>Important boundaries. This is behavioral insight, not a score.</p>
+            <p style={{ fontSize: 12, color: MUTED, fontWeight: 300, lineHeight: 1.65, marginBottom: 16 }}>Important boundaries. This is behavioral insight, not a collections or pressure tool.</p>
             {[
-              "Not a guarantee",
-              "Not a clinical tool",
-              "Not a punitive patient score",
-              "Not a replacement for human judgment",
-              "Not a reason to shame or pressure",
-              "Not clinical, legal, or financial advice",
+              "Not a collection tool",
+              "Not a pressure tactic",
+              "Not a clinical assessment",
+              "Not financial advice",
+              "Not a guarantee of return",
+              "Not a replacement for a genuine welcome",
+              "Not legal or compliance advice",
             ].map((item) => (
               <div key={item} style={{ display: "flex", gap: 8, marginBottom: 10, alignItems: "flex-start" }}>
                 <span style={{ color: RED, flexShrink: 0, lineHeight: 1.5, fontWeight: 700 }}>✕</span>
@@ -241,13 +241,13 @@ export default function NoShowPredictorPage() {
               {mistakeSteps.map((step, i) => (
                 <div key={step.label} style={{ display: "flex", alignItems: "flex-start", flex: 1 }}>
                   <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-                    <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#FBF0EF", border: `1px solid #FCA5A5`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>
+                    <div style={{ width: 48, height: 48, borderRadius: "50%", background: "#FBF0EF", border: "1px solid #FCA5A5", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>
                       {step.icon}
                     </div>
                     <p style={{ fontSize: 11, color: RED, textAlign: "center", lineHeight: 1.5, fontWeight: 500 }}>{step.label}</p>
                   </div>
                   {i < mistakeSteps.length - 1 && (
-                    <div style={{ paddingTop: 14, color: RED, fontSize: 16, flexShrink: 0, padding: "12px 4px 0" }}>&rarr;</div>
+                    <div style={{ color: RED, fontSize: 16, flexShrink: 0, padding: "12px 4px 0" }}>&rarr;</div>
                   )}
                 </div>
               ))}
@@ -261,7 +261,7 @@ export default function NoShowPredictorPage() {
               {betterSteps.map((step, i) => (
                 <div key={step.label} style={{ display: "flex", alignItems: "flex-start", flex: 1 }}>
                   <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-                    <div style={{ width: 48, height: 48, borderRadius: "50%", background: GL, border: `1px solid #BBF7D0`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>
+                    <div style={{ width: 48, height: 48, borderRadius: "50%", background: GL, border: "1px solid #BBF7D0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>
                       {step.icon}
                     </div>
                     <p style={{ fontSize: 11, color: GREEN, textAlign: "center", lineHeight: 1.5, fontWeight: 500 }}>{step.label}</p>
@@ -280,10 +280,10 @@ export default function NoShowPredictorPage() {
       <section style={{ background: DARK, padding: "4rem 2rem" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "3rem", flexWrap: "wrap" }}>
           <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
-            <span style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(109,40,217,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>📅</span>
+            <span style={{ width: 56, height: 56, borderRadius: "50%", background: "rgba(109,40,217,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>🔄</span>
             <div>
-              <p style={{ fontSize: 22, fontWeight: 700, color: "#fff", marginBottom: 6 }}>See risk. Take the right action. Save time.</p>
-              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>No-Show Predictor&trade; helps your team protect the schedule and show up for the patients who show up for you.</p>
+              <p style={{ fontSize: 22, fontWeight: 700, color: "#fff", marginBottom: 6 }}>The right welcome brings them back.</p>
+              <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", fontWeight: 300 }}>Lapsed Patient Reactivation&trade; gives your team the insight to open the door without making patients feel ashamed for walking away.</p>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
