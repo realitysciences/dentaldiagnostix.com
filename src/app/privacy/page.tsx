@@ -18,7 +18,7 @@ export default function PrivacyPage() {
 
           <Section title="Who we are">
             <P>DentalDiagnostix is a product of Spheronaut LLC. We provide a behavioral intake and reporting platform for dental practices. Our service helps dentists understand the psychological and behavioral context of their patients before appointments through a structured intake process followed by an AI-generated terrain report.</P>
-            <P>Contact: <a href="mailto:hello@dentaldiagnostix.com" style={{ color: "#0E6B5E" }}>hello@dentaldiagnostix.com</a></P>
+            <P>To get in touch, use the <Link href="/for-practices" style={{ color: "#0E6B5E" }}>contact form</Link> on this site.</P>
           </Section>
 
           <Section title="What we collect and why">
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
           </Section>
 
           <Section title="Patient rights">
-            <P>Patients who have completed a DentalDiagnostix intake may request access to, correction of, or deletion of their data by emailing <a href="mailto:hello@dentaldiagnostix.com" style={{ color: "#0E6B5E" }}>hello@dentaldiagnostix.com</a> with their name and the name of the dental practice that invited them.</P>
+            <P>Patients who have completed a DentalDiagnostix intake may request access to, correction of, or deletion of their data by submitting a request through the <Link href="/for-practices" style={{ color: "#0E6B5E" }}>contact form</Link> on this site. Include your name and the name of the dental practice that invited you.</P>
             <P>Dental practices may delete a patient record from their dashboard, which removes the patient's data from our system.</P>
           </Section>
 
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
           </Section>
 
           <Section title="Contact">
-            <P>Questions about this policy or data requests: <a href="mailto:hello@dentaldiagnostix.com" style={{ color: "#0E6B5E" }}>hello@dentaldiagnostix.com</a></P>
+            <P>Questions about this policy or data requests: use the <Link href="/for-practices" style={{ color: "#0E6B5E" }}>contact form</Link> on this site.</P>
           </Section>
 
         </div>
