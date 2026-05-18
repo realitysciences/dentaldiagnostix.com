@@ -9,6 +9,88 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "dental-anxiety-under-reported-intake-forms",
+    title: "Why Dental Anxiety Is Almost Always Under-Reported on Intake Forms",
+    date: "May 18, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Most patients who check 'minimal anxiety' on your intake form are not being accurate. They are being strategic. The form itself is producing the underreport, and what patients write down and what they actually carry into the chair are rarely the same thing.",
+    body: `
+<p>The question appears on nearly every dental intake form in some version: do you experience dental anxiety? Sometimes it is a scale from one to ten. Sometimes it is a yes or no checkbox. Sometimes it is folded into a broader question about concerns or medical history. The answers cluster reliably around the mild end of whatever scale is offered. Most patients say they have minimal or no anxiety. Most of those patients are not being accurate.</p>
+
+<p>This is not a failure of honesty. It is a failure of context. The form is asking a psychological question inside a clinical environment, at a moment when the patient is already performing competence. They are at a front desk, or in a waiting room, or seated in an operatory. People are watching, or could be. The clipboard and pen are the tools of the institution they are about to entrust with their mouth. The social calculation that happens in that moment, usually unconsciously, produces a consistent result: patients minimize.</p>
+
+<h2>What the form is actually measuring</h2>
+
+<p>An intake form that asks about dental anxiety is measuring how much anxiety a patient is willing to admit to in the moment of completing it, in the environment where they are completing it, to the people who will read it. This is a meaningfully different quantity than how much anxiety they are actually carrying. The gap between these two numbers is, in most practices, quite large and almost entirely invisible to the clinical team.</p>
+
+<p>A patient who marks their anxiety as a two out of ten is not necessarily a patient with low dental anxiety. They may be a patient who believes that marking higher will cause them to be treated differently, that it will generate unwanted attention or concern, that it will make the appointment about managing them rather than treating them. They may simply believe that admitting anxiety is socially costly in a way that minimizing it is not. All of these beliefs produce the same answer on the form.</p>
+
+<p>The more anxious the patient, the more likely they are to underreport, because the more invested they are in not being seen as a difficult patient before the appointment begins. The intake form, in other words, systematically misses the patients it was designed to identify.</p>
+
+<h2>What patients say versus what they do</h2>
+
+<p>The behavioral evidence of underreporting is visible if you know what to look at. A patient who reports minimal anxiety and then grips the armrests, asks repeatedly about what each step will feel like, flinches at sounds, or requires several minutes to calm down after a simple injection is not a patient whose intake form was accurate. They are a patient whose intake form captured what they wanted to present, not what they brought with them.</p>
+
+<p>The same pattern appears in appointment behavior before the patient arrives. Patients who cancel and reschedule repeatedly before a first appointment, who take unusually long to complete intake paperwork, or who call with procedural questions that seem disproportionate to what is scheduled are displaying anxiety in behavior that their form answer denied. The signal is there. It is just distributed across a different channel than the one being formally measured.</p>
+
+<h2>Why the question itself is part of the problem</h2>
+
+<p>The framing of most anxiety questions on intake forms asks patients to self-classify. Do you have dental anxiety? How anxious are you? These questions require the patient to apply a label to themselves, and that label carries social weight in the clinical setting. A patient who says yes to dental anxiety is, in some practices, entering a category. They are flagged, managed differently, perhaps treated with more caution than they want. For many patients, the anticipated consequences of the label are worse than simply not having the label and managing the anxiety privately.</p>
+
+<p>Questions that ask about experience rather than identity produce more accurate data. Not "do you have dental anxiety" but "is there anything about dental appointments that has been hard for you in the past?" Not "how anxious are you about today" but "is there anything you would want us to know before we start?" These are lower-stakes framings that give patients a way to share relevant information without requiring them to categorize themselves as anxious before the appointment has confirmed anything.</p>
+
+<h2>What the underreport costs</h2>
+
+<p>A dentist who walks into an appointment not knowing that a patient is significantly more anxious than their intake suggests is operating with incomplete information. The appointment that follows is not wrong, exactly. It is just calibrated to a patient who is not actually there. The real patient, the one carrying the anxiety that did not make it onto the form, may have a completely different appointment if the first thirty seconds of clinical interaction confirms what they feared, or a completely different appointment if it does not.</p>
+
+<p>The information needed to make that distinction is available before the appointment. It is not available on the intake form. It is available in the pattern of behavior between scheduling and arrival, in the language patients use when the setting is less formal and the stakes of the question feel lower, in the specific history they share when they are asked about experience rather than identity.</p>
+
+<p>The minimum viable truth: the intake form does not tell you how anxious a patient is; it tells you how anxious they are willing to appear.</p>
+    `.trim(),
+  },
+  {
+    slug: "24-hours-before-patient-writes-bad-review",
+    title: "The 24 Hours Before a Patient Writes a Bad Review",
+    date: "May 18, 2026",
+    readTime: "5 min read",
+    excerpt:
+      "Most negative dental reviews are not written in the parking lot. They are written that evening, or the next morning, after a specific sequence of internal events that almost every upset patient goes through. Understanding that sequence is what makes intervention possible.",
+    body: `
+<p>The review does not get written immediately. That is the first thing worth understanding about how negative reviews happen in dental practices. A patient who leaves an appointment feeling that something went wrong, that they were dismissed or surprised by a cost or treated in a way that did not match what they needed, rarely opens Google while they are still in the parking lot. They drive home. They carry the feeling. And then, somewhere in the next twelve to twenty-four hours, the review gets written.</p>
+
+<p>What happens in that window is not random. It follows a pattern that is consistent enough to describe, and consistent enough to interrupt, if the practice knows the patient is in it.</p>
+
+<h2>How the story assembles itself</h2>
+
+<p>The first few hours after a bad appointment are narrative hours. The patient replays what happened, selects the moments that felt wrong, and begins building a coherent account of what they mean. This is not a cynical process. It is what the mind does with unresolved feeling: it converts experience into story, and story into meaning. A comment that seemed slightly off in the chair becomes, in retrospect, evidence of how the whole practice operates. A billing surprise gets incorporated into a larger pattern about being taken advantage of. The story becomes more coherent, and more negative, as the patient works through it.</p>
+
+<p>This is why asking patients how their appointment was as they check out produces mostly positive answers. The story has not assembled yet. The feeling is there, but it has not been organized into something that the patient can articulate as a complaint, and the social context of checkout actively suppresses articulation of grievance. What the patient says at checkout and what they post that evening are responses to completely different conditions.</p>
+
+<h2>What escalates feeling into action</h2>
+
+<p>Not every upset patient writes a review. The patients who do almost always experience a second event, distinct from the appointment itself, that converts passive dissatisfaction into the decision to do something about it publicly. The most common version of this second event is an absence of contact from the practice.</p>
+
+<p>A patient who left an appointment feeling wrong, and then heard nothing from the practice, arrives at an interpretation: the practice does not know it went badly, or does not care. Either interpretation produces the same behavioral result. The review becomes a way of making the experience real to someone. It is, for many patients, the first time they feel that what happened to them actually happened, that it is acknowledged somewhere outside their own memory of it.</p>
+
+<p>A patient who hears from the practice before the story fully assembles is in a different position entirely. The narrative is still in process. The meaning is not fixed. Contact at that moment, if it is genuinely oriented toward listening rather than managing, interrupts the assembly of the story at a stage when interruption is still possible. The same patient who would have written a one-star review instead has a conversation, and sometimes a reason to come back.</p>
+
+<h2>What the behavioral signal looks like before the review</h2>
+
+<p>The patients who are at highest risk of writing a negative review are identifiable before they post, and usually before they leave the appointment. Not perfectly, and not always, but with enough consistency that the signal is worth reading. They tend to have had minimal engagement at checkout, to have not rebooked, to have responded to post-appointment communication with short or absent replies. Sometimes there are signals inside the appointment itself: a patient who went quiet during a procedure, who seemed unsatisfied by an explanation that seemed sufficient, who mentioned cost in a way that suggested something beyond logistical concern.</p>
+
+<p>Individually these signals are ambiguous. Together, and especially when they occur against a backdrop of a patient who had pre-existing signals of low trust or prior dental friction, they describe a patient who left with something unresolved. The question is whether the practice learns about that unresolved thing from the patient directly or from the review.</p>
+
+<h2>Why the review window closes faster than most practices think</h2>
+
+<p>The intervention window is shorter than it seems. A patient who has fully assembled their story, who has already processed the experience into a settled narrative of what happened and what it means about the practice, is much harder to reach than a patient who is still in the middle of that process. Reaching out the next day is better than not reaching out. Reaching out the same afternoon is meaningfully different.</p>
+
+<p>This requires knowing which patients to reach out to before the end of the day, not after the review appears. It requires reading the signals during and immediately after the appointment, not in retrospect. It requires treating the checkout interaction as diagnostic data rather than a transactional endpoint.</p>
+
+<p>The minimum viable truth: a negative review is a communication that could not happen inside the practice, written by a patient who ran out of other ways to make the experience real to someone who might care.</p>
+    `.trim(),
+  },
+  {
     slug: "why-patients-stop-coming-to-the-dentist",
     title: "Why Patients Stop Coming to the Dentist (It Is Rarely About Fear)",
     date: "April 28, 2026",
