@@ -137,7 +137,7 @@ export default function SampleReportPage() {
                 <div>
                   <p style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: "1px", color: MUTED, fontWeight: 700, marginBottom: 4 }}>{row.label}</p>
                   <p style={{ fontSize: 13, fontWeight: 700, color: TEXT, marginBottom: 4 }}>{row.title}</p>
-                  <p style={{ fontSize: 12.5, color: MUTED, lineHeight: 1.65, fontWeight: 300 }}>{row.body}</p>
+                  <p style={{ fontSize: 12.5, color: MUTED, lineHeight: 1.65, fontWeight: 300, filter: "blur(3.5px)", userSelect: "none" }}>{row.body}</p>
                 </div>
               </div>
             ))}
@@ -151,7 +151,7 @@ export default function SampleReportPage() {
                   {["Acknowledge the gap. Remove shame.", "Explain what will happen and why.", "Give choices and control.", "Invite questions. Do not rush."].map((item) => (
                     <div key={item} style={{ display: "flex", gap: 8, alignItems: "center" }}>
                       <span style={{ color: GREEN, fontSize: 13, flexShrink: 0 }}>✓</span>
-                      <span style={{ fontSize: 13, color: TEXT }}>{item}</span>
+                      <span style={{ fontSize: 13, color: TEXT, filter: "blur(3.5px)", userSelect: "none" }}>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -166,7 +166,7 @@ export default function SampleReportPage() {
                 {[`"Why haven't you been in?"`, `"You really need to get this taken care of."`, `"This is going to take a while."`].map((item) => (
                   <div key={item} style={{ display: "flex", gap: 8, alignItems: "flex-start", marginBottom: 5 }}>
                     <span style={{ color: "#D1D5DB", fontSize: 11, flexShrink: 0, marginTop: 2 }}>–</span>
-                    <span style={{ fontSize: 12.5, color: MUTED, fontStyle: "italic" }}>{item}</span>
+                    <span style={{ fontSize: 12.5, color: MUTED, fontStyle: "italic", filter: "blur(3.5px)", userSelect: "none" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -180,7 +180,7 @@ export default function SampleReportPage() {
                 {[`"I'm glad you came in. We'll take this one step at a time."`, `"I'll explain what I'm seeing as we go."`, `"You're in control of the plan. We'll decide together."`].map((item) => (
                   <div key={item} style={{ display: "flex", gap: 8, alignItems: "flex-start", marginBottom: 5 }}>
                     <span style={{ color: GREEN, fontSize: 11, flexShrink: 0, marginTop: 2 }}>–</span>
-                    <span style={{ fontSize: 12.5, color: TEXT, fontStyle: "italic", fontWeight: 500 }}>{item}</span>
+                    <span style={{ fontSize: 12.5, color: TEXT, fontStyle: "italic", fontWeight: 500, filter: "blur(3.5px)", userSelect: "none" }}>{item}</span>
                   </div>
                 ))}
               </div>

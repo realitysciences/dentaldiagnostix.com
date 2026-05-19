@@ -44,8 +44,7 @@ export default function TreatmentAcceptanceCoachPage() {
             <span style={{ display: "grid", gridTemplateColumns: "repeat(3,4px)", gap: 2 }}>
               {Array(9).fill(0).map((_, i) => <span key={i} style={{ width: 4, height: 4, borderRadius: "50%", background: P }} />)}
             </span>
-            <span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span>
-            <sup style={{ fontSize: 9, color: P }}>&trade;</sup>
+            <span style={{ display: "flex", alignItems: "baseline" }}><span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span><sup style={{ fontSize: 9, color: P }}>&trade;</sup></span>
           </Link>
           <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
