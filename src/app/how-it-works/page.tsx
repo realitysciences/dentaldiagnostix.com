@@ -29,7 +29,7 @@ export default function HowItWorksPage() {
             <span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: P, textDecoration: "none", fontWeight: 600, borderBottom: `2px solid ${P}`, paddingBottom: 2 }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
@@ -42,11 +42,11 @@ export default function HowItWorksPage() {
 
       {/* HERO */}
       <section style={{ background: "#fff", padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+        <div className="lp-module-hero" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "5rem", alignItems: "flex-start" }}>
           {/* Left */}
           <div>
             <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "1.5px", color: P, fontWeight: 600, marginBottom: 14 }}>How it works</p>
-            <h1 style={{ fontSize: 46, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
+            <h1 className="lp-module-h1" style={{ fontSize: 46, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
               How DentalDiagnostix&trade; works before the appointment.
             </h1>
             <div style={{ width: 44, height: 4, background: P, borderRadius: 2, marginBottom: 24 }} />
@@ -56,9 +56,9 @@ export default function HowItWorksPage() {
           </div>
 
           {/* Right — phone + report mockup */}
-          <div style={{ position: "relative", height: 340, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 16, position: "relative" }}>
             {/* Phone mockup (voice intake) */}
-            <div style={{ position: "absolute", left: 0, top: 20, width: 160, background: DARK, borderRadius: 24, padding: "12px 10px", boxShadow: "0 8px 32px rgba(0,0,0,0.25)", zIndex: 2 }}>
+            <div style={{ width: 160, background: DARK, borderRadius: 24, padding: "12px 10px", boxShadow: "0 8px 32px rgba(0,0,0,0.25)" }}>
               <div style={{ background: "#1A1640", borderRadius: 16, overflow: "hidden" }}>
                 <div style={{ background: "rgba(109,40,217,0.4)", padding: "10px 12px", textAlign: "center" }}>
                   <p style={{ fontSize: 8, color: "rgba(255,255,255,0.7)", textTransform: "uppercase", letterSpacing: 1, marginBottom: 2 }}>Voice Intake</p>
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
             </div>
 
             {/* Report card preview */}
-            <div style={{ position: "absolute", right: 0, top: 0, width: 280, background: "#fff", border: `1px solid ${BORDER}`, borderRadius: 14, overflow: "hidden", boxShadow: "0 8px 40px rgba(109,40,217,0.12)", zIndex: 1 }}>
+            <div style={{ width: 280, background: "#fff", border: `1px solid ${BORDER}`, borderRadius: 14, overflow: "hidden", boxShadow: "0 8px 40px rgba(109,40,217,0.12)" }}>
               <div style={{ background: DARK, padding: "10px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <span style={{ fontSize: 9, textTransform: "uppercase", letterSpacing: 1, color: "rgba(255,255,255,0.5)" }}>Patient Behavioral Brief</span>
                 <span style={{ fontSize: 9, color: "#A78BFA" }}>Ready</span>
@@ -118,7 +118,7 @@ export default function HowItWorksPage() {
           </p>
           <div style={{ width: 44, height: 4, background: P, borderRadius: 2, margin: "0 auto 4rem" }} />
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem", position: "relative" }}>
+          <div className="lp-module-4col" style={{ gap: "2rem", position: "relative" }}>
             {/* Dashed connector line */}
             <div style={{ position: "absolute", top: 28, left: "12.5%", right: "12.5%", height: 1, borderTop: `2px dashed ${PB}`, zIndex: 0 }} />
 
@@ -170,7 +170,7 @@ export default function HowItWorksPage() {
           <p style={{ fontSize: 15, color: MUTED, textAlign: "center", fontWeight: 300, marginBottom: 16 }}>Almost nothing. The workflow stays the same.</p>
           <div style={{ width: 44, height: 4, background: P, borderRadius: 2, margin: "0 auto 4rem" }} />
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2.5rem" }}>
+          <div className="lp-module-4col" style={{ gap: "2.5rem" }}>
             {[
               {
                 icon: "👤",
@@ -211,7 +211,7 @@ export default function HowItWorksPage() {
           <p style={{ fontSize: 34, fontWeight: 700, color: TEXT, textAlign: "center", marginBottom: 16 }}>What it is. And what it is not.</p>
           <div style={{ width: 44, height: 4, background: P, borderRadius: 2, margin: "0 auto 3rem" }} />
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+          <div className="lp-module-2col" style={{ gap: "2rem" }}>
             {/* It is */}
             <div style={{ background: GL, border: `1px solid #BBF7D0`, borderRadius: 12, padding: "2rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>

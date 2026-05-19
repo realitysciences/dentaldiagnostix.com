@@ -96,7 +96,7 @@ export default function ForPracticesPage() {
             <span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: P, textDecoration: "none", fontWeight: 600, borderBottom: `2px solid ${P}`, paddingBottom: 2 }}>For practices</Link>
@@ -109,11 +109,11 @@ export default function ForPracticesPage() {
 
       {/* HERO */}
       <section style={{ background: "#fff", padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "flex-start" }}>
+        <div className="lp-module-hero" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "5rem", alignItems: "flex-start" }}>
           {/* Left */}
           <div style={{ paddingTop: "1rem" }}>
             <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "1.5px", color: P, fontWeight: 600, marginBottom: 14 }}>For practices</p>
-            <h1 style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
+            <h1 className="lp-module-h1" style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
               Built for practices that want to know the patient before the appointment starts.
             </h1>
             <div style={{ width: 44, height: 4, background: P, borderRadius: 2, marginBottom: 24 }} />
@@ -348,7 +348,7 @@ export default function ForPracticesPage() {
 
       {/* BEST FIT / NOT FIT */}
       <section style={{ background: "#F9FAFB", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}`, padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+        <div className="lp-module-2col" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "2rem" }}>
           {/* Best fit */}
           <div style={{ background: PL, border: `1px solid ${PB}`, borderRadius: 12, padding: "2rem" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
@@ -398,7 +398,7 @@ export default function ForPracticesPage() {
           <p style={{ fontSize: 32, fontWeight: 700, color: TEXT, textAlign: "center", marginBottom: 16 }}>What early access includes</p>
           <div style={{ width: 44, height: 4, background: P, borderRadius: 2, margin: "0 auto 4rem" }} />
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
+          <div className="lp-module-4col" style={{ gap: "2rem" }}>
             {[
               { icon: "🎙️", title: "White-labeled pre-visit intake", body: "Voice or text. Simple for patients. Branded for your practice." },
               { icon: "📄", title: "Patient Behavioral Brief before the appointment", body: "Behavioral terrain, trust friction, and decision patterns before the visit." },

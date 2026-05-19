@@ -104,7 +104,7 @@ export default function ModulesPage() {
             <span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
@@ -117,11 +117,11 @@ export default function ModulesPage() {
 
       {/* HERO */}
       <section style={{ background: "#fff", padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "flex-start" }}>
+        <div className="lp-module-hero" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "5rem", alignItems: "flex-start" }}>
           {/* Left */}
           <div>
             <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "1.5px", color: P, fontWeight: 600, marginBottom: 14 }}>Modules</p>
-            <h1 style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
+            <h1 className="lp-module-h1" style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
               Behavioral intelligence for the moments that change outcomes.
             </h1>
             <div style={{ width: 44, height: 4, background: P, borderRadius: 2, marginBottom: 24 }} />
@@ -200,7 +200,7 @@ export default function ModulesPage() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
             {moduleRows.map((row) => (
-              <div key={row.phase} style={{ display: "grid", gridTemplateColumns: "200px 1fr 1fr", gap: "2rem", alignItems: "start" }}>
+              <div key={row.phase} className="lp-module-row" style={{ gap: "2rem", alignItems: "start" }}>
                 {/* Phase label */}
                 <div style={{ paddingTop: 8 }}>
                   <p style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: 1.5, color: P, fontWeight: 700, marginBottom: 8 }}>{row.phase}</p>

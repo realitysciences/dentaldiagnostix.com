@@ -30,7 +30,7 @@ export default function TensionDxPage() {
             <span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
@@ -52,14 +52,14 @@ export default function TensionDxPage() {
 
       {/* HERO */}
       <section style={{ background: "#fff", padding: "3rem 0 5rem" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "flex-start" }}>
+        <div className="lp-module-hero" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "5rem", alignItems: "flex-start" }}>
           {/* Left */}
           <div>
             <div style={{ width: 56, height: 56, borderRadius: "50%", background: PL, border: `1px solid ${PB}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>
               🛡️
             </div>
             <p style={{ fontSize: 22, fontWeight: 700, color: P, marginBottom: 8 }}>TensionDx&trade;</p>
-            <h1 style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
+            <h1 className="lp-module-h1" style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
               Respond before an upset patient becomes a rupture.
             </h1>
             <div style={{ width: 44, height: 4, background: P, borderRadius: 2, marginBottom: 24 }} />
@@ -137,7 +137,7 @@ export default function TensionDxPage() {
 
       {/* WHAT SECTION — 3 cols */}
       <section style={{ background: "#F9FAFB", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}`, padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+        <div className="lp-module-3col" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "2.5rem" }}>
           {/* Detects */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
@@ -208,7 +208,7 @@ export default function TensionDxPage() {
 
       {/* FLOW DIAGRAMS */}
       <section style={{ background: "#fff", padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+        <div className="lp-module-2col" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "3rem" }}>
           {/* Wrong flow */}
           <div>
             <p style={{ fontSize: 14, fontWeight: 700, color: RED, marginBottom: 20 }}>The mistake TensionDx&trade; helps avoid</p>

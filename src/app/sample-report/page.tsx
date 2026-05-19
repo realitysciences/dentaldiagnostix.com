@@ -26,7 +26,7 @@ export default function SampleReportPage() {
             <span style={{ fontSize: 18, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P, verticalAlign: "super", lineHeight: 0, marginLeft: 1 }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: P, textDecoration: "none", fontWeight: 600, borderBottom: `2px solid ${P}`, paddingBottom: 2 }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
@@ -39,12 +39,12 @@ export default function SampleReportPage() {
 
       {/* HERO + REPORT CARD */}
       <section style={{ background: "#fff", padding: "5rem 0 4rem" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "5rem", alignItems: "flex-start" }}>
+        <div className="lp-module-hero" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "5rem", alignItems: "flex-start" }}>
 
           {/* LEFT */}
           <div style={{ paddingTop: "1rem" }}>
             <p style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "1.5px", color: P, fontWeight: 600, marginBottom: 16 }}>Sample report</p>
-            <h1 style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
+            <h1 className="lp-module-h1" style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
               See what the dentist receives before the appointment.
             </h1>
             <div style={{ width: 44, height: 4, background: P, borderRadius: 2, marginBottom: 24 }} />
@@ -199,7 +199,7 @@ export default function SampleReportPage() {
       <section style={{ background: "#F9FAFB", borderTop: `1px solid ${BORDER}`, padding: "5rem 0" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem" }}>
           <h2 style={{ fontSize: 32, fontWeight: 700, color: TEXT, textAlign: "center", marginBottom: "3rem" }}>The difference in the first two minutes.</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: "2.5rem", alignItems: "center" }}>
+          <div className="lp-module-2col" style={{ gap: "2.5rem", alignItems: "center" }}>
 
             {/* Without */}
             <div style={{ background: "#fff", border: `1px solid ${BORDER}`, borderRadius: 12, padding: "2rem" }}>

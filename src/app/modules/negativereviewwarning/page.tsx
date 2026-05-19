@@ -47,7 +47,7 @@ export default function NegativeReviewWarningPage() {
             <span style={{ fontSize: 17, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 17, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P }}>&trade;</sup>
           </Link>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
@@ -69,14 +69,14 @@ export default function NegativeReviewWarningPage() {
 
       {/* HERO */}
       <section style={{ background: "#fff", padding: "3rem 0 5rem" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "flex-start" }}>
+        <div className="lp-module-hero" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "5rem", alignItems: "flex-start" }}>
           {/* Left */}
           <div>
             <div style={{ width: 56, height: 56, borderRadius: "50%", background: "#FFF7ED", border: "1px solid #FED7AA", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, marginBottom: 20 }}>
               ⚠️
             </div>
             <p style={{ fontSize: 22, fontWeight: 700, color: ORANGE, marginBottom: 8 }}>Negative Review Warning&trade;</p>
-            <h1 style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
+            <h1 className="lp-module-h1" style={{ fontSize: 44, fontWeight: 700, color: TEXT, lineHeight: 1.1, marginBottom: 12 }}>
               Catch the upset patient before they write the review.
             </h1>
             <div style={{ width: 44, height: 4, background: ORANGE, borderRadius: 2, marginBottom: 24 }} />
@@ -159,7 +159,7 @@ export default function NegativeReviewWarningPage() {
 
       {/* WHAT SECTION — 3 cols */}
       <section style={{ background: "#F9FAFB", borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}`, padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2.5rem" }}>
+        <div className="lp-module-3col" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "2.5rem" }}>
           {/* Detects */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
@@ -234,11 +234,11 @@ export default function NegativeReviewWarningPage() {
 
       {/* FLOW DIAGRAMS */}
       <section style={{ background: "#fff", padding: "5rem 0" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem" }}>
+        <div className="lp-module-2col" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", gap: "4rem" }}>
           {/* Mistake flow */}
           <div>
             <p style={{ fontSize: 14, fontWeight: 700, color: RED, marginBottom: 28 }}>The mistake it helps avoid</p>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 0 }}>
+            <div className="lp-flow-steps" style={{ alignItems: "flex-start", gap: 0 }}>
               {mistakeSteps.map((step, i) => (
                 <div key={step.label} style={{ display: "flex", alignItems: "flex-start", flex: 1 }}>
                   <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
@@ -248,7 +248,7 @@ export default function NegativeReviewWarningPage() {
                     <p style={{ fontSize: 11, color: RED, textAlign: "center", lineHeight: 1.5, fontWeight: 500 }}>{step.label}</p>
                   </div>
                   {i < mistakeSteps.length - 1 && (
-                    <div style={{ color: RED, fontSize: 16, flexShrink: 0, padding: "12px 4px 0" }}>&rarr;</div>
+                    <div className="lp-flow-arrow" style={{ color: RED, fontSize: 16, flexShrink: 0, padding: "12px 4px 0" }}>&rarr;</div>
                   )}
                 </div>
               ))}
@@ -258,7 +258,7 @@ export default function NegativeReviewWarningPage() {
           {/* Better flow */}
           <div>
             <p style={{ fontSize: 14, fontWeight: 700, color: GREEN, marginBottom: 28 }}>The better first move</p>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 0 }}>
+            <div className="lp-flow-steps" style={{ alignItems: "flex-start", gap: 0 }}>
               {betterSteps.map((step, i) => (
                 <div key={step.label} style={{ display: "flex", alignItems: "flex-start", flex: 1 }}>
                   <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
@@ -268,7 +268,7 @@ export default function NegativeReviewWarningPage() {
                     <p style={{ fontSize: 11, color: GREEN, textAlign: "center", lineHeight: 1.5, fontWeight: 500 }}>{step.label}</p>
                   </div>
                   {i < betterSteps.length - 1 && (
-                    <div style={{ color: GREEN, fontSize: 16, flexShrink: 0, padding: "12px 4px 0" }}>&rarr;</div>
+                    <div className="lp-flow-arrow" style={{ color: GREEN, fontSize: 16, flexShrink: 0, padding: "12px 4px 0" }}>&rarr;</div>
                   )}
                 </div>
               ))}

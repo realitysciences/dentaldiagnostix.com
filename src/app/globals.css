@@ -34,11 +34,19 @@ h1, h2, h3, h4 {
 }
 
 /* Landing page responsive classes */
-.lp-two-col   { display: grid; grid-template-columns: 1fr 1fr; }
-.lp-three-col { display: grid; grid-template-columns: repeat(3, 1fr); }
-.lp-four-col  { display: grid; grid-template-columns: repeat(4, 1fr); }
-.lp-nav-links { display: flex; gap: 1.5rem; align-items: center; }
-.lp-section   { padding-left: 3rem; padding-right: 3rem; }
+.lp-two-col        { display: grid; grid-template-columns: 1fr 1fr; }
+.lp-three-col      { display: grid; grid-template-columns: repeat(3, 1fr); }
+.lp-four-col       { display: grid; grid-template-columns: repeat(4, 1fr); }
+.lp-nav-links      { display: flex; gap: 1.5rem; align-items: center; }
+.lp-section        { padding-left: 3rem; padding-right: 3rem; }
+
+/* Module page responsive grids */
+.lp-module-hero    { display: grid; grid-template-columns: 1fr 1fr; }
+.lp-module-2col    { display: grid; grid-template-columns: 1fr 1fr; }
+.lp-module-3col    { display: grid; grid-template-columns: repeat(3, 1fr); }
+.lp-module-4col    { display: grid; grid-template-columns: repeat(4, 1fr); }
+.lp-module-row     { display: grid; grid-template-columns: 200px 1fr 1fr; }
+.lp-flow-steps     { display: flex; flex-direction: row; align-items: flex-start; }
 
 /* Tools dropdown */
 .lp-tools-dropdown { position: relative; }
@@ -94,6 +102,16 @@ h1, h2, h3, h4 {
   .lp-hero-grid         { grid-template-columns: 1fr !important; }
   .lp-vs-grid           { grid-template-columns: 1fr !important; }
   .lp-cred-grid         { grid-template-columns: 1fr 1fr !important; }
+
+  /* Module page mobile overrides */
+  .lp-module-hero       { grid-template-columns: 1fr !important; }
+  .lp-module-2col       { grid-template-columns: 1fr !important; }
+  .lp-module-3col       { grid-template-columns: 1fr !important; }
+  .lp-module-4col       { grid-template-columns: 1fr 1fr !important; }
+  .lp-module-row        { grid-template-columns: 1fr !important; }
+  .lp-flow-steps        { flex-direction: column !important; gap: 1rem !important; }
+  .lp-flow-arrow        { display: none !important; }
+  .lp-module-h1         { font-size: 32px !important; }
 }
 
 /* Blog post body typography */

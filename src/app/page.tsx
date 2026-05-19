@@ -20,7 +20,7 @@ export default function LandingPage() {
             <span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P, verticalAlign: "super", lineHeight: 0, marginLeft: 1 }}>&trade;</sup>
           </a>
-          <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
+          <div className="lp-nav-links" style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
             <Link href="/how-it-works" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>How it works</Link>
             <Link href="/sample-report" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>Sample report</Link>
             <Link href="/for-practices" style={{ fontSize: 13, color: MUTED, textDecoration: "none" }}>For practices</Link>
@@ -373,7 +373,7 @@ export default function LandingPage() {
 
           <div style={{ maxWidth: 1100, marginTop: "3rem" }}>
             <p style={{ fontSize: 11, textTransform: "uppercase", color: "rgba(255,255,255,0.35)", letterSpacing: "1.5px", marginBottom: 16, fontWeight: 600 }}>Add-on modules</p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem", marginBottom: "1.25rem" }}>
+            <div className="lp-module-3col" style={{ gap: "0.75rem", marginBottom: "1.25rem" }}>
               {[
                 { id: "tensiondx", name: "TensionDx", desc: "Upset patient triage and de-escalation scripts" },
                 { id: "noshowpredictor", name: "No-Show Predictor", desc: "Behavioral risk flag before the appointment" },
