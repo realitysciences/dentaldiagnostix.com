@@ -23,8 +23,7 @@ export default function SampleReportPage() {
       <nav style={{ position: "sticky", top: 0, zIndex: 50, background: "#fff", borderBottom: `1px solid ${BORDER}` }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "baseline" }}>
-            <span style={{ fontSize: 18, fontWeight: 700, color: DARK }}>Dental</span>
-            <span style={{ fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
+            <span style={{ fontSize: 18, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P, verticalAlign: "super", lineHeight: 0, marginLeft: 1 }}>&trade;</sup>
           </Link>
           <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>

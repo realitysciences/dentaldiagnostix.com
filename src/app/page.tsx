@@ -17,8 +17,7 @@ export default function LandingPage() {
       <nav style={{ position: "sticky", top: 0, zIndex: 50, background: "#fff", borderBottom: `1px solid ${BORDER}` }}>
         <div className="lp-nav-inner" style={{ maxWidth: 1100, margin: "0 auto", padding: "0 2rem", height: 60, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "baseline", gap: 0 }}>
-            <span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: DARK }}>Dental</span>
-            <span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
+            <span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: DARK }}>Dental</span><span style={{ fontFamily: "DM Sans, sans-serif", fontSize: 18, fontWeight: 700, color: P }}>Diagnostix</span>
             <sup style={{ fontSize: 9, color: P, verticalAlign: "super", lineHeight: 0, marginLeft: 1 }}>&trade;</sup>
           </a>
           <div style={{ display: "flex", gap: "1.75rem", alignItems: "center" }}>
